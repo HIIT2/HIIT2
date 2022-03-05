@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+    <!--Meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ 
+    <!--Title-->
+    <title>Pop Up Modal Window</title>
+         
+    <!--Stylesheets-->
+   <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <script src="js/jquery-1.4.4.min.js"></script>
+
+</head>
+<body>
+    <a href="#" id="button">Play</a>
+ 
+    <div id="modal" class="modal-box">
+        <div id="heading">
+            Are you ready to get fit with HIIT2?
+        </div>
+ 
+        <div id="content">
+            <p>By clicking agree below, you attest that you are healthy and in a safe environment for exercise.</p>
+     
+            <a href="https://hiit2.github.io/HIIT2/index.html" class="button green close"><img src="Images/3d-dice-clipart-2.png" >Yes, do it now!</a>
+     
+        </div>
+        <script src="js/jquery.reveal.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#button').click(function(e) {        // Button which will activate our modal
+                    $('#modal').reveal({                // The item which will be opened with reveal
+                        animation: 'fade',              // fade, fadeAndPop, none
+                        animationspeed: 600,            // how fast animtions are
+                        closeonbackgroundclick: false,   // if you click background will modal close?
+                        dismissmodalclass: 'close'      // the class of a button or element that will close an open modal
+                    });
+                return false;
+                });
+            });
+        </script>
+</body>
+</html>
