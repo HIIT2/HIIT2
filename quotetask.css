@@ -1,0 +1,68 @@
+*{
+    width: 0  0;
+    height: 0 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: lightgoldenrodyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 600px;
+    margin: 10px;
+}
+
+.quote{
+    text-align: center;
+    font-style: italic;
+    position: relative;
+    bottom: 60px;
+    left: 60px;
+}
+
+.author{
+    font-size: 20px;
+    position: relative;
+    top: 40px;
+    right: 166px;
+}
+
+hr{
+margin: 10px 0;
+width: 30%;
+border: 1px solid black;
+position: relative;
+
+right: 100px;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 330px;
+    border: black 2px solid;
+    
+}
+
