@@ -7,7 +7,7 @@ camera.position.set(0,0,4)
 
 
 var renderer = new THREE.WebGLRenderer({antialias: true});
-renderer.setClearColor("black");
+renderer.setClearColor("#f8f9fa");
 renderer.setSize(window.innerWidth *0.3,window.innerHeight*0.3);
 
 document.body.appendChild(renderer.domElement);
@@ -27,12 +27,12 @@ function getTexture(text) {
                 canvas.height = 500;
                 const context = canvas.getContext("2d");
                 context.font ="110px Serif";
-                context.fillStyle = "black";
+                context.fillStyle = "#f8f9fa";
                 context.fillRect(0, 0, 500, 500);
-                context.fillStyle = "white";
+                context.fillStyle = "#343a40";
                 context.fillRect(2, 2, 496, 496);
                 
-                context.fillStyle = "black"
+                context.fillStyle = "#f8f9fa"
 				        context.fillText(text, 70, 260);
              
 
