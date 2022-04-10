@@ -2,6 +2,7 @@ let btn = document.getElementById('btn');
 let output = document.getElementById('output');
 
 let quotes = [
+    
 '“You just can not beat the person who never gives up." - Babe Ruth',
 
 '“Be miserable. Or motivate yourself. Whatever has to be done, it is always your choice.” -Wayne Dyer',
@@ -95,7 +96,256 @@ let quotes = [
 
 '“Do not watch the clock; do what it does. Keep going.“ - Sam Levenson',
 
-'“Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.“ - Thomas A. Edison '
+'“Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.“ - Thomas A. Edison ',
+
+
+
+
+
+'”All our dreams can come true, if we have the courage to pursue them.” - Walt Disney ',
+
+
+
+'”The secret of getting ahead is getting started.” - Mark Twain',
+
+
+
+'”I’ve missed more than 9,000 shots in my career. I’ve lost almost 300 games. 26 times I’ve been trusted to take the game winning shot and missed. I’ve failed over and over and over again in my life and that is why I succeed.” - Michael Jordan',
+
+
+
+'”Don’t limit yourself. Many people limit themselves to what they think they can do. You can go as far as your mind lets you. What you believe, remember, you can achieve.” - Mary Kay Ash',
+
+
+
+'”It’s hard to beat a person who never gives up.” - Babe Ruth',
+
+'”If people are doubting how far you can go, go so far that you can’t hear them anymore.” - Michele Ruiz ',
+
+
+
+'”Everything you can imagine is real. ” - Pablo Picasso',
+
+
+
+'”Do one think everyday that scares you. ” -  Eleanor Roosevelt',
+
+
+
+'”It’s no use going back to yesterday, because I was a different person then.” - Lewis Carroll',
+
+
+
+'”whatever you are , be a good one. ” - Abraham Lincoln',
+
+'”Don’t be afraid to give up the good to go for the great.” - John D. Rockefeller ',
+
+
+
+'”Things may come to those who wait, but only the things left by those who hustle.” - Abraham Lincoln ',
+
+
+
+'”Greatness only comes before hustle in the dictionary.” - Ross Simmonds',
+
+
+
+'”without hustle, talent will only take you so far. ” - Gary Vaynerchuk',
+
+
+
+'”Work like there is someone working twenty four hours a day to take it away from you.” - Mark Cuban ',
+
+
+
+
+
+
+
+'”if opportunity doesn’t knock, build a door. ” - Kurt Cobain ',
+
+
+
+'”Work hard in silence, let your success be the noise.” - Frank Ocean ',
+
+
+
+'”The only difference between ordinary and extraordinary is that little extra.” - Jimmy Johnson ',
+
+
+
+'”in the middle of every difficulty lies opportunity. ” - Albert Einstein',
+
+
+
+'”Start where you are. Use what you have. Do what you can.” - Arthur Ashe',
+
+
+
+
+
+
+
+
+
+
+
+'”Dreams don’t work unless you do.” - John C. Maxwell ',
+
+
+
+'”Go the extra mile. It’s never crowded there.” - Dr. Wayne D. Dyer',
+
+
+
+'”Begin anywhere.” - John Cage',
+
+
+
+'”Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing or learning to do.” - Pele',
+
+
+
+'”Every champion was once a contender that didn’t give up.” - Gabby Douglas ',
+
+
+
+
+
+
+
+
+
+
+
+'”Today is your opportunity to build the tomorrow you want.” - Ken Poirot',
+
+
+
+'”You don’t need to see the whole staircase, just take the first step.” - Martin Luther King Jr',
+
+
+
+'”The big lesson in life is never be scared of anyone or anything.” - Frank Sinatra',
+
+
+
+'”Do the best you can. No one can do more than that.” - John Wooden',
+
+
+
+'”It’s never too late to be what you might’ve been.” - George Eliot',
+
+
+
+
+
+
+
+
+
+
+
+'”A winner is a dreamer who didn’t give up.” - Nelson Mandela',
+
+
+
+'”What is life without a little risk?” - JK Rowling ',
+
+
+
+'”The question isn’t who is going to let me; it’s who is going to stop me.” - Ayn Rand ',
+
+
+
+'”I always thought it was me against the world and then one day I realized it’s just me against me.” - Kendrick Lamar ',
+
+
+
+'”Don’t compromise yourself. You’re all you’ve got.” - Janis Joplin',
+
+
+
+
+
+
+
+
+
+
+
+'”I hated every minute of training, but I said, ‘Don’t quit. Suffer now and live the rest of your life as a champion.”- Muhammad Ali ',
+
+
+
+'”Opportunities don’t happen. You create them.” - Chris Grosser',
+
+
+
+'”You must do the thing you think you cannot do.” - Eleanor Roosevelt ',
+
+
+
+'”Doubt kills more dreams than failure ever will.” - Suzy Kassemen',
+
+
+
+'”I never lose. Either I win or learn.” - Nelson Mandela',
+
+
+
+
+
+
+
+
+
+
+
+'”We are what we repeatedly do. Excellence, then, is not an act, but a habit.” - Aristotle ',
+
+
+
+'”Some people want it to happen, some wish it would happen, others make it happen.” - Michael Jordan ',
+
+
+
+'”Great things are done by a series of small things brought together. ” - Vincent Van Gogh ',
+
+
+
+'”The hard days are what make you stronger.” - Aly Raisman',
+
+
+
+'”You’ve got to get up every morning with determination if you’re going to go to bed with satisfaction.” - George Lorimer ',
+
+
+
+
+
+
+
+
+
+'”Happiness is not something ready made. It comes from your own actions.” - Dalai Lama XIV',
+
+
+
+'”If we have the attitude that it’s going to be a great day it usually is.” - Catherine Pulsifer',
+
+
+
+'”impossible is just an opinion. ” - Paulo Coelho ',
+
+
+
+'”Your passion is waiting for your courage to catch up.” - Isabelle Lafleche ',
+
+
+
+'”If something is important enough, even if the odds are stacked against you, you should still do it.” - Elon Musk'
+
 
 
 
@@ -110,6 +360,4 @@ btn.onclick = function(){
 } 
 
 
-// '"on my mama" - lil yee',
-//'"wtf" - lil yehe',
-//'"dhwbdhwd" - lss'
+
