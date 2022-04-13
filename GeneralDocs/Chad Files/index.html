@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HIIT</title>
+</head>
+<body >
+    <h1> HIIT2</h1>
+    <main>
+       
+       <section>
+           <h3>Exercise</h3>
+           <div id="exercise">Lets do exercise</div>
+           <button onclick=getExercise()>
+            Dice
+           </button>
+       </section>
+       <section>
+           <h3>Timer</h3>
+           <div id="time"></div>
+           <button onclick=startTimer()>Start</button>
+           <button onclick=stopTimer()>Stop </button>
+           <button onclick=resetTimer()>Reset</button>
+       </section>
+       <section>
+        <h3> Current Exercises</h3>
+           <ul id="exerciseList">
+               
+            </ul>
+            <div id="addExercise">
+                <input type="text" id="newExercise" placeholder="Add new exercise here">
+                <button onclick=addExercise()> Add exercise</button>
+            </div>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
