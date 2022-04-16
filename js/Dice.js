@@ -132,7 +132,7 @@ var render = function() {
 
 
 
-document.getElementById("diceButton").addEventListener("click", ()=>{
+document.getElementById("startButton").addEventListener("click", ()=>{
 clicked=true
 setTimeout(()=>{clicked=false},2000)
 
