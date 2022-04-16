@@ -1,4 +1,5 @@
 var clicked=false;
+var exerciseName=""
 var scene = new THREE.Scene();
 
 var camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,1,1000)
@@ -8,12 +9,12 @@ camera.position.set(0,0,4)
 
 var renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setClearColor("#f8f9fa");
-renderer.setSize(window.innerWidth *0.3,window.innerHeight*0.3);
+renderer.setSize(window.innerWidth ,window.innerHeight);
 
 document.body.appendChild(renderer.domElement);
 
 window.addEventListener('resize', () => {
-    renderer.setSize(window.innerWidth *0.3,window.innerHeight*0.3);
+    renderer.setSize(window.innerWidth,window.innerHeight);
     camera.aspect = window.innerWidth / window.innerHeight;
 
     camera.updateProjectionMatrix();
@@ -66,26 +67,39 @@ function RandomExercise(e){
   case 0:
     //PLANKS
     mesh.lookAt(0,0,0)
+    exerciseName=exercises[4]
+    
+    
     break;
   case 1:
     //CRUNCHES
     mesh.lookAt(0,1,0)
+    exerciseName=exercises[3]
+    
     break;
   case 2:
     //PULL UP
     mesh.lookAt(1,0,0)
+    exerciseName=exercises[1]
+    
     break;
   case 3:
       //LUNGES
     mesh.lookAt(0,0,-1)
+    exerciseName=exercises[5]
+    
     break;
   case 4:
     //SQUAT
     mesh.lookAt(0,-1,0)
+    exerciseName=exercises[2]
+   
     break;
   case 5:
     //PUSH UP
     mesh.lookAt(-1,0,0)
+    exerciseName=exercises[0]
+    
     break;
    
     
@@ -124,7 +138,7 @@ var render = function() {
   
     renderer.render(scene, camera);
     document.getElementById("diceAnimation").appendChild( renderer.domElement )
-    
+    console.log(exerciseName)
    
     
   
@@ -134,12 +148,22 @@ var render = function() {
 
 document.getElementById("startButton").addEventListener("click", ()=>{
 clicked=true
+
 setTimeout(()=>{clicked=false},2000)
 
 
 
 })
+function getExerciseFromDice(){
+  if(exerciseName){
+
+
+    document.getElementById("exerciseName").innerHTML=exerciseName
+  }
+
+  }
 
 render();
+getExerciseFromDice();
 
 

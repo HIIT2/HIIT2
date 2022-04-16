@@ -36,14 +36,15 @@
 <body>
     <div class="container">
     
-    <a href="#" id="startButton">Start</a>
+   
     <div id="diceAnimation"></div>
-    <button id="diceButton" class="text-center  btn btn-info">Dice</button>
+        
     <div id="modal" class="modal-box">
+          <div id="exerciseName"></div>
         <header class="header row d-flex align-items-center">
             <h1 class="col text-center">HIIT2</h1>
           </header> 
-    
+          
           <section class="row">
             <div class="topleft col text-center">
           <h1>Exercise Duration</h1>
@@ -75,6 +76,7 @@
      
         </div>
     </div>
+    <a href="#" id="startButton">Dice</a>
     <footer id="footer" class=" navbar fixed-bottom py-4 bg-dark text-white-50 text-center d-flex justify-content-center">
         
           <small>Copyright &copy; Your Website</small>
@@ -98,12 +100,14 @@
                         dismissmodalclass: 'close'      // the class of a button or element that will close an open modal
                     })
                              // Button which will activate our modal
-                            },2000)
-                        
+                            },2200)
+                            
                      
                 return false;
                 });
             });
+            
+            
         </script>
          <script src="js/stopwatch.js"></script>
          <script src="js/Dice.js"></script>
