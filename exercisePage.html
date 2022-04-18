@@ -89,6 +89,7 @@
       <div class="col text-center">
    
         <div id="exerciseNameImage"></div>
+         
           <a href="#" class="btn btn-dark close">Next Move</a>
         </div>
     
@@ -101,11 +102,17 @@
     </div>
         <script src="js/jquery.reveal.js"></script>
   <script>
-  
+    let exerciceImageUrl=""
   $(document).ready(function() {
     $('#startButton').click(                   
       function(e) {  
-        setTimeout(()=>{   $('#modal').reveal({                // The item which will be opened with reveal
+        setTimeout(()=>{  
+          document.getElementById("exerciseNameText").innerHTML=exerciseName;
+          console.log("here")
+          exerciceImageUrl=exerciseName.split(" ").join("").toLowerCase()+".jpg"
+          console.log(exerciceImageUrl)
+          document.getElementById("exerciseNameImage").innerHTML=exerciceImageUrl
+          $('#modal').reveal({                // The item which will be opened with reveal
         animation: 'fade',              // fade, fadeAndPop, none
         animationspeed: 600,            // how fast animtions are
         closeonbackgroundclick: true,   // if you click background modal will close
@@ -118,9 +125,9 @@
                 return false;
                 });
             });
-           
+    
         </script>
-      <script src="js/stopwatch.js"></script>
+      <script src="js/exerciseFunctions.js"></script>
       <script src="js/Dice.js"></script>
 
 </body>
