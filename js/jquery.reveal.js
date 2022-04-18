@@ -57,7 +57,8 @@
 			if(modalBG.length == 0) {
 				modalBG = $('<div class="reveal-modal-bg" />').insertAfter(modal);
 			}		    
-     
+			document.getElementById("exerciseNameImage").innerHTML="<img src='/Images/exercise_images"+exerciseName+".jpg'>";
+			document.getElementById("exerciseNameText").innerHTML=exerciseName;
 /*---------------------------
  Open & Close Animations
 ----------------------------*/
