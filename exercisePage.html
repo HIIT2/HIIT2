@@ -35,18 +35,22 @@
 </head>
 <body>
     <div class="container">
-    
-   
+      <div class="p-5 text-center bg-light">
+        <h1 class="mb-3">HIIT2</h1>
     <div id="diceAnimation"></div>
-        
+    <a href="#" id="startButton">Dice</a>
+  </div>
     <div id="modal" class="modal-box">
-          <div id="exerciseName"></div>
+      <section class="row">
+        <div class="col text-center">
         <header class="header row d-flex align-items-center">
-            <h1 class="col text-center">HIIT2</h1>
+          <h1>Get Moving!</h1>
           </header> 
+      </div>
+        </section>
           
           <section class="row">
-            <div class="topleft col text-center">
+            <div class="col text-center">
           <h1>Exercise Duration</h1>
     
           <div id="time">00:00:00</div>
@@ -65,18 +69,20 @@
         </div>
       </section>
       <section class="row">
-        <section class=" bottomleft col text-center" id="dice">
-          
-         
+      <section class="bottomleft col text-center">
+   
+        <div id="exerciseNameImage"></div>
+          <a href="#" class="btn btn-dark close">Next Move</a>
+     
         </section>
     
-        <div class="bottomright col text-center">Another Component
+        <div class="bottomright col text-center">
+          <h1 id="exerciseNameText"></h1>
           <p id="share-text">this is the text that will get copied to clipboard need to update with info about the workout</p>
         </div>
      
         </div>
     </div>
-    <a href="#" id="startButton">Dice</a>
     <footer id="footer" class=" navbar fixed-bottom py-4 bg-dark text-white-50 text-center d-flex justify-content-center">
         
           <small>Copyright &copy; Your Website</small>
