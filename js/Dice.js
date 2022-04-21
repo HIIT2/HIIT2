@@ -1,5 +1,12 @@
+
+var allExerciseData=JSON.parse(window.localStorage.getItem('exercises'))
+
+
+
 var clicked=false;
+
 var exerciseName=""
+
 var scene = new THREE.Scene();
 
 var camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,1,1000)
@@ -19,8 +26,8 @@ window.addEventListener('resize', () => {
 
     camera.updateProjectionMatrix();
 })
-const exercises=["Push Up", "Pull Up", "Squat", "Crunches", "Planks", "Lunges"]
-  
+const exercises=allExerciseData.map(value=>value["exerciseName"])
+  console.log(exercises)
 // Texture of dice
 function getTexture(text) {
                 const canvas = document.createElement("canvas");
@@ -49,11 +56,11 @@ var mesh = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 2), [
     new THREE.MeshLambertMaterial({  map: getTexture(exercises[4])}),
     new THREE.MeshLambertMaterial({  map: getTexture(exercises[5])}),
   ]);
-  meshX=-10;
+ 
   mesh.position.set(0,0,0)
   mesh.recieveShadow=true
   scene.add(mesh)
-  meshX+=1
+  
   mesh.rotateOnAxis(new THREE.Vector3(-1.1,1.1,0), 16 * Math.PI / 180)
     
   
@@ -138,7 +145,7 @@ var render = function() {
   
     renderer.render(scene, camera);
     document.getElementById("diceAnimation").appendChild( renderer.domElement )
-    console.log(exerciseName)
+   
    
     
   
@@ -159,6 +166,7 @@ function getExerciseFromDice(){
 
 
     document.getElementById("exerciseName").innerHTML=exerciseName
+    console.log(exerciseName)
   }
 
   }

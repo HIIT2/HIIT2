@@ -149,9 +149,16 @@ h1 {font-size: 42px;}
     visibility:hidden;
     z-index:101;
 }
-
+.secondPopup{
+    display: flex;
+      align-items: center;
+ 
+  
+  
+    
+  
+}
 #modal2 {
-
     width:500px;
     height:250px;
     padding:8px;
@@ -295,7 +302,29 @@ h1 {font-size: 42px;}
     top: 0;
     left: 0; 
 }
-
+/* table properities */
+table{
+    font-size: 10px;
+    background-color: #bababa;
+    width: 100%;
+    height: 60%;
+}
+th{
+    font-size: 20px;
+    color: #555555;
+    text-align: center;
+}
+select{width: 100px;
+text-align: center;}
+option{
+    width: 100px;
+}
+td{
+    text-align: center;
+}
+select{
+   
+}
 @media only screen and (max-width: 767px) {
          
     #modal {

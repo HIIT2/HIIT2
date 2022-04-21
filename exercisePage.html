@@ -1,135 +1,149 @@
 <!DOCTYPE html>
 <html>
+
 <head>
- 
-    <!--Meta tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
- 
-    <!--Title-->
-    <title>Get Fit with HIIT2</title>
-    <link rel="stylesheet" href="css/exercisePage.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js" integrity="sha512-NLtnLBS9Q2w7GKK9rKxdtgL7rA7CAS85uC/0xd9im4J/yOL4F9ZVlv634NAM7run8hz3wI2GabaA6vv8vJtHiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-   
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <!--Stylesheets-->
-   <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/exerciseLast.css">
-    <script src="js/jquery-1.4.4.min.js"></script>
 
-    <!--google analytics-->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GK7N5YNJTG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!--Meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  gtag('config', 'G-GK7N5YNJTG');
-</script>
+  <!--Title-->
+  <title>Get Fit with HIIT2</title>
+  <link rel="stylesheet" href="css/exercisePage.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"
+    integrity="sha512-NLtnLBS9Q2w7GKK9rKxdtgL7rA7CAS85uC/0xd9im4J/yOL4F9ZVlv634NAM7run8hz3wI2GabaA6vv8vJtHiQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+  <!--Stylesheets-->
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/exerciseLast.css">
+  <script src="js/jquery-1.4.4.min.js"></script>
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+
+
+
+  <!--google analytics-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GK7N5YNJTG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-GK7N5YNJTG');
+  </script>
 
 </head>
+
 <body>
-    <div class="container">
-      <div class="p-5 text-center bg-light">
-        <div class="row text-center">
+  <div class="container">
+    <div class="p-5 text-center bg-light">
+      <div class="row text-center">
         <h1 class="mb-3">Get Fit with HIIT<sup><small>2</small></sup></h1>
-        </div>
-        <div class="row text-center">
+      </div>
+      <div class="row text-center">
         <a href="#" id="startButton">Dice</a>
-            </div>
-        <div class="row text-center">
-          <h1>Exercise Duration</h1>
-<!--Exercise Duration Counter Begins-->
-          <div id="time">00:00:00</div>
-          <div class="btns-container">
-            <button id="start_btn" class="btn btn-success" onclick="start()">START</button>
-            <button id="pause_btn" class="btn btn-primary" onclick="pause()">PAUSE</button>
-            <button id="reset_btn" class="btn btn-warning" onclick="reset()">RESET</button>
+      </div>
+      <div class="row text-center">
+        <h1>Exercise Duration</h1>
+        <!--Exercise Duration Counter Begins-->
+        <div id="time">00:00:00</div>
+        <div class="btns-container">
+          <button id="start_btn" class="btn btn-success" onclick="start()">START</button>
+          <button id="pause_btn" class="btn btn-primary" onclick="pause()">PAUSE</button>
+          <button id="reset_btn" class="btn btn-warning" onclick="reset()">RESET</button>
+        </div>
+        <!--Exercise Duration Counter Ends-->
+      </div>
+
+
+      <div class="row text-center">
+
+        <div id="diceAnimation"></div>
+      </div>
+      <footer id="footer" class=" navbar fixed-bottom py-4 bg-dark text-white-50 justify-content-center">
+        <div class="row">
+          <div class="col-sm float-right">
+            <p>Copyright &copy; HIIT<sup>2</sup></p>
           </div>
-<!--Exercise Duration Counter Ends-->
+
+          <div class="col-sm float-left">
+            <button id="share_btn" class="btn btn-success">SHARE</button>
+          </div>
         </div>
-
-
-        <div class="row text-center">
-
-    <div id="diceAnimation"></div>
-        </div>
-    <footer id="footer" class=" navbar fixed-bottom py-4 bg-dark text-white-50 justify-content-center">
-      <div class="row">
-      <div class="col-sm float-right">  
-      <p>Copyright &copy; HIIT<sup>2</sup></p>
     </div>
-   
-    <div class="col-sm float-left">
-    <button id="share_btn" class="btn btn-success" >SHARE</button>  
-  </div>
-</div>
-</div>
-  </footer>
+    </footer>
     <div id="modal" class="modal-box">
       <div class="row text-center">
         <h1>Get Moving!</h1>
       </div>
 
       <div class="row">
-   
-    
+
+
         <div class="col text-center">
           <h1>Interval</h1>
           <h1 id="info">00:00</h1>
-          <button id="startinterval" class="btn btn-info" value="Start Interval" onclick="setTimeout('alert(\'times up!\')', 30000)">Start Interval Countdown</button>
+          <button id="startinterval" class="btn btn-info" value="Start Interval"
+            onclick="setTimeout('alert(\'times up!\')', 30000)">Start Interval Countdown</button>
         </div>
-    
-      <div class="row">
-      <div class="col text-center">
-   
-        <div id="exerciseNameImage"></div>
-         
-          <a href="#" class="btn btn-dark close">Next Move</a>
+
+        <div class="row">
+          <div class="col text-center">
+
+            <div id="exerciseNameImage"></div>
+
+            <a href="#" class="btn btn-dark close">Next Move</a>
+          </div>
+
+          <div class="col text-center">
+            <h1 id="exerciseNameText"></h1>
+            <p id="share-text">this is the text that will get copied to clipboard need to update with info about the
+              workout</p>
+          </div>
+
         </div>
-    
-      <div class="col text-center">
-        <h1 id="exerciseNameText"></h1>
-        <p id="share-text">this is the text that will get copied to clipboard need to update with info about the workout</p>
       </div>
-     
-      </div>
-    </div>
-        <script src="js/jquery.reveal.js"></script>
-  <script>
-    let exerciceImageUrl=""
-  $(document).ready(function() {
-    $('#startButton').click(                   
-      function(e) {  
-        setTimeout(()=>{  
-          document.getElementById("exerciseNameText").innerHTML=exerciseName;
-          console.log("here")
-          exerciceImageUrl=exerciseName.split(" ").join("").toLowerCase()+".jpg"
-          console.log(exerciceImageUrl)
-          document.getElementById("exerciseNameImage").innerHTML=exerciceImageUrl
-          $('#modal').reveal({                // The item which will be opened with reveal
-        animation: 'fade',              // fade, fadeAndPop, none
-        animationspeed: 600,            // how fast animtions are
-        closeonbackgroundclick: true,   // if you click background modal will close
-        dismissmodalclass: 'close'      // the class of a button or element that will close an open modal
-                    })
-         // Button which will activate our modal
-         },2200)
-                            
-                     
-                return false;
-                });
+      <div id="invisibleVariable"> sd</div>
+      <script src="js/jquery.reveal.js"></script>
+      <script>
+        let exerciceImageUrl = ""
+        $(document).ready(function () {
+          $('#startButton').click(
+            function (e) {
+              setTimeout(() => {
+                document.getElementById("exerciseNameText").innerHTML = exerciseName;
+                console.log("here")
+                exerciceImageUrl = exerciseName.split(" ").join("").toLowerCase() + ".jpg"
+                console.log(exerciceImageUrl)
+                document.getElementById("exerciseNameImage").innerHTML = exerciceImageUrl
+                $('#modal').reveal({ // The item which will be opened with reveal
+                  animation: 'fade', // fade, fadeAndPop, none
+                  animationspeed: 600, // how fast animtions are
+                  closeonbackgroundclick: true, // if you click background modal will close
+                  dismissmodalclass: 'close' // the class of a button or element that will close an open modal
+                })
+                // Button which will activate our modal
+              }, 2200)
+
+
+              return false;
             });
-    
-        </script>
-      <script src="js/exerciseFunctions.js"></script>
-      <script src="js/Dice.js"></script>
+        });
+      </script>
+      
+      <script  src="js/exerciseFunctions.js"></script>
+      <script  src="js/Dice.js"></script>
 
 </body>
-</html>
 
+</html>

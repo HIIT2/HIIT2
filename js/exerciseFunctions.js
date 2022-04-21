@@ -1,3 +1,4 @@
+
 const timer = document.querySelector('#time');
 const start_btn = document.querySelector('#start_btn');
 const pause_btn = document.querySelector('#pause_btn');
@@ -111,5 +112,4 @@ startinterval.addEventListener('click', event => {
       tHour.innerHTML = "Time's Up!";
   };
   })
-  
-
+ 
