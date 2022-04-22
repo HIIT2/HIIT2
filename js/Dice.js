@@ -528,7 +528,7 @@ function randomQuote() {
 
  var  randomSelec= mQuotes[Math.floor(Math.random()* mQuotes.length)];
    
-    document.getElementById("mQuoteSelec").innerHTML = randomSelec;
+    document.getElementById("mQuoteSelect").innerHTML = randomSelect;
    
 
 }
