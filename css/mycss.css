@@ -73,11 +73,11 @@ h1 {font-size: 42px;}
     width:100px;
     height:50px;
  
-    background-image: -webkit-linear-gradient(top, rgb(247, 243, 246), rgb(247, 243, 246));
-    background-image: -moz-linear-gradient(top, rgb(247, 243, 246), rgb(247, 243, 246));
-    background-image: -o-linear-gradient(top, rgb(247, 243, 246), rgb(247, 243, 246));
-    background-image: -ms-linear-gradient(top, rgb(247, 243, 246), rgb(247, 243, 246));
-    background-image: linear-gradient(top, rgb(247, 243, 246), rgb(247, 243, 246));
+ background-image: -webkit-linear-gradient(top, rgb(247, 243, 246), rgb(40, 14, 240));
+    background-image: -moz-linear-gradient(top, rgb(247, 243, 246), rgb(40, 14, 240));
+    background-image: -o-linear-gradient(top, rgb(247, 243, 246), rgb(40, 14, 240));
+    background-image: -ms-linear-gradient(top, rgb(247, 243, 246), rgb(40, 14, 240));
+    background-image: linear-gradient(top, rgb(247, 243, 246), rgb(40, 14, 240));
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#feda71', EndColorStr='#feba48');
  
     border:1px solid #ca9336;
