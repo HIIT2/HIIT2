@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Layout</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      
+      font:black;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+
+    ul{
+        list-style-type: square;
+    }
+
+    .nxtbtn{
+        height: 75px; 
+    font-size: 100%; 
+    }
+
+
+    .quote{
+        font-size: 100%; 
+        font-weight: bolder; 
+        border: 2px outset; 
+        font-family: 'Gill Sans', 'Gill Sans MT',  'Trebuchet MS', sans-serif;
+    }
+
+    .ftrcon{
+        height: 75px;
+    }
+
+    .imgstyle{
+        width:80%; position: relative; right: 10px;
+    }
+
+    #ibox{
+        font-size: 100%;
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="well well-lg">
+  
+<div class="container-fluid text-center">  
+    
+  <div class="row content">
+      
+    <div class=" col-xs-12 col-sm-3 col-md-3 sidenav">
+        <h2>get fit with hiit2</h2>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 text-left">
+        <h2>Tips for Pull-ups </h2>
+        
+        <ul>
+        
+        <li> Reach and grip the bar with both hands, keeping them apart at shoulder-width. Your palms need to stay facing away from you. </li>
+        
+        <li>Fully extend your arms and let your bodyweight hang. If the bar is set too low, no problem. Just bend your knees.
+        
+        </li>
+        
+        <li> Keeping your back, shoulders, and core engaged—pull up. </li>
+        
+        </ul>
+        <hr>
+        <img class="imgstyle" src="../favicon/Optimized-pullupimage.jpg" >
+      
+
+      
+    </div>
+    <div class=" col-xs-12 col-sm-3 col-md-3 sidenav">
+        <div id="ibox">
+           
+            <h1>interval</h1>
+            <h2>00:00</h2>
+            <button>start</button>
+        
+        </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <div class=" ftrcon row" >
+
+        <div class="col col-lg-8">
+
+            <p  class = "quote" >
+                "Be miserable. Or motivate yourself. 
+                Whatever has to be done, it is 
+                always your choice." -Wayne Dyer
+            </p>
+
+        </div>
+        <div class=" nxtbtn col col-lg-4 ">
+        <span>
+            <button>next</button>
+            <button>Stop here</button>
+        </span>
+
+        
+        </div>
+    </div>
+  
+</footer>
+</div>
+</div>
+</body>
+</html>
