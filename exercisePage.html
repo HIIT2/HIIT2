@@ -111,84 +111,48 @@
         </div>
     </div>
     </footer>
-    <div id="modal" class="modal-box">
-      <div class="container">
-    <div class="well well-lg">
-  
-<div class="container-fluid text-center">  
     
-  <div class="row content" style="height: 450px">
-      
-    <div class=" col-xs-12 col-sm-3 col-md-3 sidenav " style="padding-top: 20px;
-      
-    height: 100%;">
-        <h2>get fit with hiit2</h2>
+    
+    <div id="modal" class="modal-box">
+      div class="row text-center">
+      <h1>Get Moving!</h1>
     </div>
 
+    <div class="row">
 
-    <div class="col-xs-12 col-sm-6 col-md-6 text-left">
-        <h2 >Tips for your workout:</h2>
-        
-        <ul id="pTips" style="list-style-type: square;">
-        
-        <li> Reach and grip the bar with both hands, keeping them apart at shoulder-width. Your palms need to stay facing away from you. </li>
-        
-        <li>Fully extend your arms and let your bodyweight hang. If the bar is set too low, no problem. Just bend your knees.
-        
-        </li>
-        
-        <li> Keeping your back, shoulders, and core engaged—pull up. </li>
-        
-        </ul>
-        <hr>
-        <img id="exerciseNameImage" class="imgstyle" src="" style=" width:80%; position: relative; right: 10px;" >
-      
 
-      
-    </div>
-    <div class=" col-xs-12 col-sm-3 col-md-3 sidenav" style="padding-top: 20px;
-      
-    height: 100%;">
-        <div id="ibox" style="font-size: 100%;">
-           
-            <h1>Interval</h1>
-            <h1 id="info">00:00</h1>
-            <button id="startinterval" class="btn btn-info" value="Start Interval" onclick="setTimeout('alert(\'times up!\')', 30000)">Start Interval Countdown</button>
-        
+      <div class="col text-center">
+        <h1>Interval</h1>
+        <h1 id="info">00:00</h1>
+        <button id="startinterval" class="btn btn-info" value="Start Interval"
+          onclick="setTimeout('alert(\'times up!\')', 30000)">Start Interval Countdown</button>
+      </div>
+
+      <div class="row">
+        <div class="col text-center">
+
+          <div id="exerciseNameImage"></div>
+
+          <a href="#" class="btn btn-dark close">Next Move</a>
         </div>
-    </div>
-  </div>
-</div>
-
-<footer class="container-fluid text-center" style="font:black;
-padding: 15px;">
-    <div class=" ftrcon row"  style="height: 75px;">
-
-        <div class="col col-lg-8">
-
-            <p id="mQuoteSelect" class = "quote" style=" font-size: 100%; 
-            font-weight: bolder; 
-            border: 2px outset; 
-            font-family: 'Gill Sans', 'Gill Sans MT',  'Trebuchet MS', sans-serif;">
-                
-            </p>
-
-        </div>
-        <div class=" nxtbtn col col-lg-4 " style=" height: 75px; 
-        font-size: 100%;">
-        <span>
-            <button>next</button>
-            <button>Stop here</button>
-        </span>
-
         
+        <div>
+        
+          <p id = "mQuoteSelect" style ="border: 4px outset; margin:10px;
+                                         padding:15px; font-family: Arial, Helvetica, serif;
+                                         height:auto; font-size: 16px; text-align: center;"></p>
+          
         </div>
+
+        <div class="col text-center">
+          <h1 id="exerciseNameText"></h1>
+          <p id="share-text">this is the text that will get copied to clipboard need to update with info about the
+            workout</p>
+        </div>
+
+      </div>
     </div>
-  
-</footer>
-</div>
-</div>
-     </div>
+    </div>
       <div id="invisibleVariable"> sd</div>
       <script src="js/jquery.reveal.js"></script>
       <script>
