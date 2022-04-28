@@ -84,7 +84,7 @@
         </li>
       </ol>
     </div>
-    <button style = "height: 75px;" type="button" id="roll-button">Roll Dice</button>
+    <button style = "height: 75px;" type="button" id="roll-button" onclick = "randomQuote()">Roll Dice</button>
     <p>Get help here for workouts -  <a href = "layouthelp.html" target = "_blank"> WorkoutHelp</a></p>
        <!--Exercise Duration Counter Begins-->
        <div id="time">00:00:00</div>
@@ -119,6 +119,14 @@
             <button id="startinterval" class="btn btn-info" value="Start Interval"
               onclick="setTimeout('alert(\'times up!\')', 30000)">Start Interval Countdown</button>
           </div>
+          
+           <div class="well">
+        
+          <p id = "mQuoteSelect" style ="border: 4px outset; margin:10px;
+                                         padding:15px; font-family: Arial, Helvetica, serif;
+                                         height:auto; font-size: 16px; text-align: center;"></p>
+          
+        </div>
   
     <script src="./js/app.js"></script>
     <script src="jquery.reveal.js"></script>
@@ -147,5 +155,6 @@
             });
         });
       </script>
+          <script src="js/mquote.js"></script>
   </body>
 </html>
