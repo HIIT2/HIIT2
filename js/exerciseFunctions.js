@@ -16,6 +16,7 @@ function start() {
   interval = setInterval(showTime, 1000);
   hideBtn([start_btn]);
   showBtn([pause_btn, reset_btn]);
+  exerciseStarted=true
 }
 
 function pause() {
@@ -26,6 +27,7 @@ function pause() {
   } else {
     interval = setInterval(showTime, 1000);
     pause_btn.innerHTML = 'PAUSE';
+    exerciseStarted=true
   }
 }
 
@@ -37,6 +39,7 @@ function reset() {
   timer.innerHTML = toHHMMSS(time);
   hideBtn([pause_btn, reset_btn]);
   showBtn([start_btn]);
+  exerciseStarted=false
 }
 
 function toHHMMSS(time) {
@@ -82,34 +85,97 @@ shareBtn.addEventListener('click', event => {
 
   });
 
-const startinterval = document.getElementById('startinterval')
-startinterval.addEventListener('click', event => {
-  let tHour = document.getElementById('info');
+// const startinterval = document.getElementById('startinterval')
+// startinterval.addEventListener('click', event => {
+//   let tHour = document.getElementById('info');
 
-  let tSecond = 30;
+//   let tSecond = 30;
   
-  dTime(tSecond);
+//   dTime(tSecond);
   
-  const cDown = setInterval( () =>{
-      tSecond--;
-     // tHour.innerHTML = `00:${tSecond}`;
-     dTime(tSecond)
-      if(tSecond <= 0 || tSecond < 1){
-          eTime()
-          clearInterval(cDown)
-      }
+//   const cDown = setInterval( () =>{
+//       tSecond--;
+//      // tHour.innerHTML = `00:${tSecond}`;
+//      dTime(tSecond)
+//       if(tSecond <= 0 || tSecond < 1){
+//           eTime()
+//           clearInterval(cDown)
+//       }
   
-  },1000)
+//   },1000)
   
   
-  function dTime(second){
-      const min = Math.floor(second / 60);
-      const sec = Math.floor(second % 60);
-      tHour.innerHTML = `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0': ''}${sec}`;
-  }
+//   function dTime(second){
+//       const min = Math.floor(second / 60);
+//       const sec = Math.floor(second % 60);
+//       tHour.innerHTML = `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0': ''}${sec}`;
+//   }
   
-  function eTime(){
-      tHour.innerHTML = "Time's Up!";
-  };
-  })
- 
+//   function eTime(){
+//       tHour.innerHTML = "Time's Up!";
+//   };
+//   })
+
+
+// This part taken from exercise page
+let exerciseImageUrl = ""
+let exerciseStarted=false
+$(document).ready(function () {
+  $('#startButton').click(
+    function (e) {
+      setTimeout(() => {
+        document.getElementById("exerciseNameText").innerHTML = exerciseName;
+        
+        exerciseImageUrl = "Images/exercise_images/Optimized-"+exerciseName.split(" ").join("").toLowerCase() + ".jpg"
+        
+        console.log(exerciseImageUrl)
+        exerciseImg=document.getElementById("exerciseImg")
+        exerciseImg.setAttribute("src", exerciseImageUrl)
+        exerciseStarted=true
+        $('#modal').reveal({ // The item which will be opened with reveal
+          animation: 'fade', // fade, fadeAndPop, none
+          animationspeed: 600, // how fast animtions are
+          closeonbackgroundclick: true, // if you click background modal will close
+          dismissmodalclass: 'close' // the class of a button or element that will close an open modal
+        })
+        fetchJson()
+        // Button which will activate our modal
+      }, 2200)
+
+     
+      return false;
+    });
+});
+
+function clickDice() {
+  
+  if(!exerciseStarted){
+  start()}
+  randomQuote()
+
+}
+function fetchJson(){
+          
+fetch("js/exerciseHelp.json")
+.then(function (response) {
+return response.json();
+})
+.then(function (data) {
+// display exercises to html 
+var tips=""
+Object.keys(data).map(key => {
+if(exerciseName==key){
+data[key].map(value => {
+tips+="<li>"+value+"</li>"
+})
+
+document.getElementById("exerciseTips").innerHTML=tips
+}
+
+})
+
+})
+.catch(function (err) {
+console.log(err);
+});
+}
