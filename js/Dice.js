@@ -1,6 +1,6 @@
 
 var allExerciseData=JSON.parse(window.localStorage.getItem('exercises'))
-
+let dataArray=[]
 
 
 var clicked=false;
@@ -121,9 +121,7 @@ scene.add(light);
 var light = new THREE.PointLight(0xFFFFFF, 2, 1000)
 light.position.set(0,0,25);
 scene.add(light);
-function chanceClick(){
-  clicked=false
-}
+
 
 var render = function() {
   if(clicked===true){
@@ -134,12 +132,11 @@ var render = function() {
      
      
     }
-    else{
+  
      
      
-     RandomExercise(random)
-      
-    }
+    
+   
   
     requestAnimationFrame(render);
   
@@ -151,22 +148,124 @@ var render = function() {
   
 }
 
+///
+////////////////////////////////
+////////////////////////////////////////
+////////////////////////////////
+// this part for modal functionality and other stuff
+let dataFromStorage=JSON.parse(window.localStorage.getItem("exercises"))
+function resolveAfter2Seconds() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+   
+      clicked=false
+      resolve(exerciseName);
+    }, 2000);
+  });
+}
+
+async function asyncCall() {
+  
+  const result = await resolveAfter2Seconds();
+  console.log(result);
+  // expected output: "resolved"
+}
+
+
+
 
 
 document.getElementById("startButton").addEventListener("click", ()=>{
-clicked=true
+  clicked=true
+  asyncCall().then(result => {
+    //this function comes from dice animation
+    RandomExercise(random)
+    document.getElementById("exerciseNameText").innerHTML = exerciseName;
 
-setTimeout(()=>{clicked=false},2000)
+    exerciseImageUrl = "Images/exercise_images/Optimized-" + exerciseName.split(" ").join("").toLowerCase() + ".jpg"
 
+    console.log(exerciseName)
+    exerciseImg = document.getElementById("exerciseImg")
+    exerciseImg.setAttribute("src", exerciseImageUrl)
+    exerciseStarted = true
+   
+    $('#modal').reveal({ // The item which will be opened with reveal
+      animation: 'fade', // fade, fadeAndPop, none
+      animationspeed: 500, // how fast animtions are
+      closeonbackgroundclick: false, // if you click background modal will close
+      dismissmodalclass: 'close' // the class of a button or element that will close an open modal
+    })
+    fetchJson()
+    countdownOrRep()
+    randomQuote()
+    dataForShareButton()
+  })
 
 
 })
+document.getElementById("newExercise").addEventListener("click", ()=>{
+  clicked=true
+  asyncCall().then(result => {
+    RandomExercise(random)
+    document.getElementById("exerciseNameText").innerHTML = exerciseName;
+
+    exerciseImageUrl = "Images/exercise_images/Optimized-" + exerciseName.split(" ").join("").toLowerCase() + ".jpg"
+
+    console.log(exerciseName)
+    exerciseImg = document.getElementById("exerciseImg")
+    exerciseImg.setAttribute("src", exerciseImageUrl)
+    exerciseStarted = true
+   
+    $('#modal').reveal({ // The item which will be opened with reveal
+      animation: 'fade', // fade, fadeAndPop, none
+      animationspeed: 500, // how fast animtions are
+      closeonbackgroundclick: false, // if you click background modal will close
+      dismissmodalclass: 'close' // the class of a button or element that will close an open modal
+    })
+    fetchJson()
+    countdownOrRep()
+    randomQuote()
+    dataForShareButton()
+  })
+
+
+})
+document.getElementById("timerClose").addEventListener("click", ()=>{
+  clicked=true
+  asyncCall().then(result => {
+    RandomExercise(random)
+    document.getElementById("exerciseNameText").innerHTML = exerciseName;
+
+    exerciseImageUrl = "Images/exercise_images/Optimized-" + exerciseName.split(" ").join("").toLowerCase() + ".jpg"
+
+    console.log(exerciseName)
+    exerciseImg = document.getElementById("exerciseImg")
+    exerciseImg.setAttribute("src", exerciseImageUrl)
+    exerciseStarted = true
+   
+    $('#modal').reveal({ // The item which will be opened with reveal
+      animation: 'fade', // fade, fadeAndPop, none
+      animationspeed: 500, // how fast animtions are
+      closeonbackgroundclick: false, // if you click background modal will close
+      dismissmodalclass: 'close' // the class of a button or element that will close an open modal
+    })
+    fetchJson()
+    countdownOrRep()
+    randomQuote()
+    dataForShareButton()
+  })
+
+
+})
+
+
+
 function getExerciseFromDice(){
   if(exerciseName){
 
 
     document.getElementById("exerciseName").innerHTML=exerciseName
-    console.log(exerciseName)
+    
   }
 
   }
@@ -177,8 +276,124 @@ getExerciseFromDice();
 
 
 
+let exerciseImageUrl = ""
+let exerciseStarted = false
+let timerOrRepeat=""
+let timerOrRepeatValue=""
+let exerciseFinished=false
+var pauseClicked=false;
+var resetClicked=false;
 
+
+
+  
+
+
+
+function fetchJson() {
+
+  fetch("js/exerciseHelp.json")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      // display exercises to html 
+      var tips = ""
+      Object.keys(data).map(key => {
+        if (exerciseName == key) {
+          data[key].map(value => {
+            tips += "<li>" + value + "</li>"
+          })
+
+          document.getElementById("exerciseTips").innerHTML = tips
+        }
+
+      })
+
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
     
+  
+    for(let i=0;i<dataFromStorage.length;i++) {
+      if(dataFromStorage[i].exerciseName===exerciseName){
+        timerOrRepeat=dataFromStorage[i].exerciseMode 
+        timerOrRepeatValue=dataFromStorage[i].exerciseValue
+      }
+    }
     
+} 
+function countdownOrRep(){
+  if(timerOrRepeat==="Timer"){
+    document.getElementById("ibox").style.display="inline"
+    document.getElementById("ibox-repeat").style.display="none"
+    document.getElementById("timerClose").style.display="none"
+    console.log("timer")
+    countdownTimeStart()
+    
+
+  }
+  else if(timerOrRepeat==="Repeat"){
+    document.getElementById("ibox").style.display="none"
+    document.getElementById("ibox-repeat").style.display="inline"
+    document.getElementById("repeatValue").innerHTML=timerOrRepeatValue
+    console.log("rep")
+
+  }
+}
+
+// timer for seconds 
+function countdownTimeStart(){
+
+  let countDownDate = new Date().getTime()+(timerOrRepeatValue*1000+1500);
+ 
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+    let now = new Date().getTime()
+      // Get todays date and time
+      
+      var distance
+      
+     
+      if(!pauseClicked&&!resetClicked){
+         distance = countDownDate - now;
+      }
+      else if(pauseClicked){
+        distance = distance
+      }
+      else if(resetClicked){
+        clearInterval(x);
+      }
+       // Find the distance between now an the count down date
+       
+      
+       // Time calculations for days, hours, minutes and seconds
+      
+       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+       // Output the result in an element with id="demo"
+       document.getElementById("demo").innerHTML =+ minutes + "m " + seconds + "s ";
+      // If the count down is over, write some text 
+      if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "Done!";
+          document.getElementById("timerClose").style.display="block"
+      } 
+  }, 1000);
+  }
+ 
+  function dataForShareButton(){
+    
+    for(let i=0;i<dataFromStorage.length;i++) {
+      if(dataFromStorage[i].exerciseName===exerciseName){
+          dataArray.push([dataFromStorage[i].exerciseName,dataFromStorage[i].exerciseMode,dataFromStorage[i].exerciseValue])
+      }
+    }
+    
+  }
+  function dataForShare(){
+      console.log(dataArray);
+  }
     
   

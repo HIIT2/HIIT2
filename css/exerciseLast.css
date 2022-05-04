@@ -197,6 +197,10 @@ h1 {font-size: 42px;}
     left: 0; 
 }
 
+/* temp styling */
+h2{
+    font-size:35px
+}
 @media only screen and (max-width: 480px) {
          
     #modal {

@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
   <!--Stylesheets-->
   <link rel="stylesheet" href="css/reveal.css">
-  <link rel="stylesheet" href="css/exerciseLast.css">
+  <link rel="stylesheet" href="css/exerciseLast.css"> 
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
@@ -149,9 +149,9 @@
         <!--Exercise Duration Counter Begins-->
         <div id="time">00:00:00</div>
         <div class="btns-container">
-          <button id="start_btn" class="btn btn-success" onclick="start()">START</button>
-          <button id="pause_btn" class="btn btn-primary" onclick="pause()">PAUSE</button>
-          <button id="reset_btn" class="btn btn-warning" onclick="reset()">RESET</button>
+          <!-- <button id="start_btn" class="btn btn-success" onclick="start()">START</button> -->
+          <button id="pause_btn" class="btn btn-primary" >PAUSE</button>
+          <button id="reset_btn" class="btn btn-warning" >RESET</button>
         </div>
         <!--Exercise Duration Counter Ends-->
       </div>
@@ -219,10 +219,15 @@
           <div class=" col-xs-12 col-sm-3 col-md-3 sidenav">
               <div id="ibox">
                  
-                  <h1>interval</h1>
-                  <h2>00:00</h2>
-                  <button>start</button>
+                  <div>Countdown</div>
+                  <h2 id="demo"></h2>
+                  <button class="close " id="timerClose">New Exercise</button>
               
+              </div>
+              <div id="ibox-repeat">
+                  <div>Repeat</div>
+                  <h2 id="repeatValue"></h2>
+                  <button class="close "  id="newExercise">New Exercise</button>
               </div>
           </div>
         </div>
@@ -240,11 +245,11 @@
               </div>
               <div class=" nxtbtn col col-lg-4 ">
               <span>
-                  <button>next</button>
-                  <button>Stop here</button>
+                  <button onclick="pause()">pause</button>
+                  <button onclick="reset()">reset</button>
               </span>
       
-              
+              <button onclick=" dataForShare()"> I am done</button>
               </div>
           </div>
         
