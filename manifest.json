@@ -1,0 +1,41 @@
+{
+    "name": "HIIT2",
+    "short_name": "HIIT2",
+    "description": "Get Fit with HIIT2!",
+    "icons": [
+{
+    "src": "Images/icons/HIIT2_SquareLogo_12X12_BlackBackground.png",
+    "type": "image/png",
+    "sizes": "12X12"
+},
+{
+    "src": "Images/icons/HIIT2_SquareLogo_32X32_BlackBackground.png",
+    "type": "image/png",
+    "sizes": "32X32"
+},
+{
+    "src": "Images/icons/HIIT2_SquareLogo_64X64_BlackBackground.png",
+    "type": "image/png",
+    "sizes": "64X64"
+},
+{
+    "src": "Images/icons/HIIT2_SquareLogo_128X128_BlackBackground.png",
+    "type": "image/png",
+    "sizes": "128X128"
+},
+{
+    "src": "Images/icons/HIIT2_SquareLogo_256X256_BlackBackground.png",
+    "type": "image/png",
+    "sizes": "256X256"
+}
+    ],
+"start_url": "index.html",
+"display": "standalone",
+"scope": ".",
+"orientation": "any",
+"background_color": "#65b066",
+"theme_color": "#65b066",
+"dir": "ltr",
+"lang": "en-US"
+
+}
