@@ -1,10 +1,40 @@
-function rollDice() {
-  const dice = [...document.querySelectorAll(".die-list")];
-  dice.forEach(die => {
-    toggleClasses(die);
-    die.dataset.roll = getRandomNumber(1, 6);
-  });
+if (navigator.serviceWorker) {
+  window.addEventListener('load', () => {
+   navigator.serviceWorker.register('./service-worker.js')
+      .then(registration => console.log('SW registered'))
+    .catch(err => console.log(`SW not registered - Error: ${err}`))
+  })
+} else {
+  console.log('Service Worker is not supported in this browser.')
 }
+
+function rollDice() {
+var roll = 0;
+if (roll == 0) {
+
+    const dice = [...document.querySelectorAll(".die-list")];
+    dice.forEach(die => {
+      toggleClasses(die);
+      die.dataset.roll = getRandomNumber(1, 6);
+      start();
+      var roll = 1;
+    });
+  
+  }
+
+else {
+  function rollDice() {
+    const dice = [...document.querySelectorAll(".die-list")];
+    dice.forEach(die => {
+      toggleClasses(die);
+      die.dataset.roll = getRandomNumber(1, 6);
+      var roll = roll + 1;
+    });
+
+}
+}
+}
+
 
 function toggleClasses(die) {
   die.classList.toggle("odd-roll");
