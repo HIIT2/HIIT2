@@ -20,23 +20,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"
         integrity="sha512-NLtnLBS9Q2w7GKK9rKxdtgL7rA7CAS85uC/0xd9im4J/yOL4F9ZVlv634NAM7run8hz3wI2GabaA6vv8vJtHiQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  -->
-        <style>
-            /* Default height for small devices */
-            .intro-example {
-              height: 400px;
-              background-image: url('./Images/logosmall.png')
-             
-            }
-            /* Height for devices larger than 992px */
-            @media (min-width: 800px) {
-              .intro-example {
-                height: 600px;
-                background-image: url('./Images/HIIT2Logo-v1.png');
-              }
-            }
-          </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     <!--google analytics-->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GK7N5YNJTG"></script>
@@ -50,48 +36,40 @@
 
         gtag('config', 'G-GK7N5YNJTG');
     </script>
-    
+
 </head>
 
 <body>
-        <header>
-            <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#navbarExample01"
-        aria-controls="navbarExample01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarExample01">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-<!-- Navbar -->
-        </header>
-         <!-- Background image -->
- <div
- class="p-5 text-center bg-image intro-example"
- style="
-    background-repeat: no-repeat;
-    background-position: center center;
- "
->
- <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+                aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+                    <li class="nav-item active mx-3">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="layouthelp.html">Exercises help</a>
+                    </li>
+                </ul>
+
+                <img src="Images/logosmall.png" alt="logo" height="40px" width="80px">
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+
+    <!-- <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
    <div class="d-flex justify-content-center align-items-center h-100">
      <div class="text-white">
        <h1 class="mb-3">Get Fit with HIIT<sup>2</sup></h1>
@@ -100,248 +78,255 @@
      </div>
    </div>
  </div>
-</div>
+</div> -->
 
-<!-- Background image -->
-<!--Footer-->
-        <footer id="footer" class=" navbar fixed-bottom py-4 bg-dark text-white-50 justify-content-center">
-            <div class="row">
-              <div class="col-sm float-right">
+    <main class="d-flex p-2 justify-content-center ">
+        <header class="text-white d-flex flex-column p-2  align-items-center my-5">
+            <h1 class="mb-5 display-1 "> HIIT2</h1>
+            <h2 class="mb-5 display-4"> High Intensity Interval Training Aplication</h2>
+            <p class="text-center " id="inside-text"> Some text about our program and what it do, best someone else
+                write it</p>
+            <button id="button" class="btn-outline-btn-light btn-lg text-white my-5">Lets exercise</button>
+        </header>
+        <!-- Background image -->
+        <!--Footer-->
+
+        <div id="modal" class="modal-box">
+            <div id="modal-heading">
+                Are you ready to get fit with HIIT2?
+            </div>
+
+            <div id="modal-content">
+                <p>By clicking agree below, you attest that you are healthy and in a safe environment for exercise.
+                </p>
+                <div id="modal-buttons"> 
+                    <a style="height: 70px;" href="#" class="button green close" id="button2"><img
+                            src="Images/3d-dice-clipart-2.png">I want to choose my workout</a>
+                    <a style="height: 70px;" href="hiit2.html" class="button green" id="button2"><img
+                            src="Images/3d-dice-clipart-2.png">Choose the workout for me</a>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+        <div id="modal2" class="modal-box">
+            <div id="modal2-heading">
+              Lets choose the exercise
+            </div>
+            <div id="modal2-content">
+            <table class="table table-bordered table-dark ">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Exercise</th>
+                        <th scope="col">Repeat or Time</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><select class="form-select bg-dark text-light" id="selectExercise1" aria-label="Default select example">
+
+                                <option value="1">Push Up</option>
+                                <option value="2">Pull Up</option>
+                                <option value="3">Squat</option>
+                                <option value="4">Crunches</option>
+                                <option value="5">Planks</option>
+                                <option  value="6" selected>Lunges</option>
+
+                            </select></td>
+                        <td> <select class="form-select bg-dark text-light" id="selectExerciseMode1" aria-label="Default select example">
+
+                                <option value="1">Timer</option>
+                                <option value="2">Repeat</option>
+
+                            </select></td>
+                        <td> <select class="form-select bg-dark text-light" id="selectExerciseValue1" aria-label="Default select example">
+
+                                <option value="1">15</option>
+                                <option value="2">30</option>
+
+                            </select></td>
+
+
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td><select class="form-select bg-dark text-light" id="selectExercise2" aria-label="Default select example">
+
+
+                                <option value="1">Push Up</option>
+                                <option value="2">Pull Up</option>
+                                <option value="3">Squat</option>
+                                <option value="4">Crunches</option>
+                                <option value="5" selected>Planks</option>
+                                <option value="6">Lunges</option>
+
+                            </select></td>
+                        <td> <select class="form-select bg-dark text-light" id="selectExerciseMode2" aria-label="Default select example">
+
+                                <option value="1">Timer</option>
+                                <option value="2">Repeat</option>
+
+                            </select></td>
+                        <td> <select class="form-select bg-dark text-light" id="selectExerciseValue2" aria-label="Default select example">
+
+                                <option value="1">15</option>
+                                <option value="2">30</option>
+
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td><select class="form-select bg-dark text-light" id="selectExercise3" aria-label="Default select example">
+
+                                <option value="1" selected>Push Up</option>
+                                <option value="2">Pull Up</option>
+                                <option value="3">Squat</option>
+                                <option value="4">Crunches</option>
+                                <option value="5">Planks</option>
+                                <option value="6">Lunges</option>
+                            </select></td>
+                        <td> <select class="form-select bg-dark text-light" id="selectExerciseMode3" aria-label="Default select example">
+
+                                <option value="1">Timer</option>
+                                <option value="2" selected>Repeat</option>
+
+                            </select></td>
+                        <td> <select class="form-select bg-dark text-light" id="selectExerciseValue3" aria-label="Default select example">
+
+                                <option value="1">15</option>
+                                <option value="2">30</option>
+
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td><select class="form-select bg-dark text-light" id="selectExercise4" aria-label="Default select example">
+
+                                <option value="1">Push Up</option>
+                                <option value="2" selected>Pull Up</option>
+                                <option value="3">Squat</option>
+                                <option value="4">Crunches</option>
+                                <option value="5">Planks</option>
+                                <option value="6">Lunges</option>
+                            </select></td>
+                        <td> <select class="form-select bg-dark text-light" id="selectExerciseMode4" aria-label="Default select example">
+
+                                <option value="1">Timer</option>
+                                <option value="2">Repeat</option>
+
+                            </select></td>
+                        <td> <select class="form-select bg-dark text-light" id="selectExerciseValue4" aria-label="Default select example">
+
+                                <option value="1">15</option>
+                                <option value="2">30</option>
+
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td><select class="form-select bg-dark text-light" id="selectExercise5" aria-label="Default select example">
+
+                                <option value="1">Push Up</option>
+                                <option value="2">Pull Up</option>
+                                <option value="3" selected>Squat</option>
+                                <option value="4">Crunches</option>
+                                <option value="5">Planks</option>
+                                <option value="6">Lunges</option>
+                            </select></td>
+                        <td> <select class="form-select bg-dark text-light" id="selectExerciseMode5" aria-label="Default select example">
+
+                                <option value="1">Timer</option>
+                                <option value="2">Repeat</option>
+
+                            </select></td>
+                        <td> <select class="form-select bg-dark text-light" id="selectExerciseValue5" aria-label="Default select example">
+
+                                <option value="1">15</option>
+                                <option value="2">30</option>
+
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td><select class="form-select bg-dark text-light" id="selectExercise6" aria-label="Default select example">
+
+                                <option value="1">Push Up</option>
+                                <option value="2">Pull Up</option>
+                                <option value="3">Squat</option>
+                                <option value="4" selected>Crunches</option>
+                                <option value="5">Planks</option>
+                                <option value="6">Lunges</option>
+                            </select></td>
+                        <td> <select class="form-select bg-dark text-light" id="selectExerciseMode6" aria-label="Default select example">
+
+                                <option value="1">Timer</option>
+                                <option value="2">Repeat</option>
+
+                            </select></td>
+                        <td> <select class="form-select bg-dark text-light" id="selectExerciseValue6" aria-label="Default select example">
+
+                                <option value="1">15</option>
+                                <option value="2">30</option>
+
+                            </select></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="exercisePage.html" class="button green close" id="goToExercisepage"><img
+                    src="Images/3d-dice-clipart-2.png">Let's do this!</a>
+
+                </div>
+        </div>
+    </main>
+    <footer id="footer" class=" navbar fixed-bottom py-4 bg-dark text-white-50 justify-content-center">
+        <div class="row">
+            <div class="col-sm float-right">
                 <p>Copyright &copy; HIIT<sup>2</sup></p>
-              </div>
-        
-              <div class="col-sm float-left">
+            </div>
+
+            <div class="col-sm float-left">
                 <button id="share_btn" class="btn btn-success">SHARE</button>
-              </div>
             </div>
-        </footer>
-        <a href="#" id="button">Play</a>
-        <div id="firstPopup">
-            <div id="modal" class="modal-box">
-                <div class="heading">
-                    Are you ready to get fit with HIIT2?
-                </div>
-
-                 <div class="content">
-                    <p>By clicking agree below, you attest that you are healthy and in a safe environment for exercise.
-                    </p>
-
-                    <p><a style = "height: 70px;" href="#" class="button green close" id="button2"><img src="Images/3d-dice-clipart-2.png">I want to choose my workout</a>
-                      <a  style = "height: 70px;" href="hiit2.html" class="button green" id="button2"><img src="Images/3d-dice-clipart-2.png">Choose the workout for me</a>
+        </div>
+    </footer>
 
 
-                </div>
-            </div>
-            </div>
-          
-            
-            <div class="secondPopup">
-            <div id="modal2" class="modal-box">
-                <div class="heading">
-                    How to play
-                </div>
-
-                    <table class="table table-striped table-dark">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Exercise</th>
-                                <th scope="col">Repeat or Time</th>
-                                <th scope="col">Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td><select class="form-select" id="selectExercise1"  aria-label="Default select example">
-                              
-                                        <option value="1">Push Up</option>
-                                        <option value="2">Pull Up</option>
-                                        <option value="3">Squat</option>
-                                        <option value="4">Crunches</option>
-                                        <option value="5">Planks</option>
-                                        <option value="6" selected>Lunges</option>
-                                   
-                                    </select></td>
-                                <td> <select class="form-select" id="selectExerciseMode1" aria-label="Default select example">
-
-                                        <option value="1">Timer</option>
-                                        <option value="2">Repeat</option>
-
-                                    </select></td>
-                                <td> <select class="form-select" id="selectExerciseValue1" aria-label="Default select example">
-
-                                        <option value="1">15</option>
-                                        <option value="2">30</option>
-
-                                    </select></td>
-
-
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td><select class="form-select" id="selectExercise2"  aria-label="Default select example">
-
-                                    
-                                        <option value="1">Push Up</option>
-                                        <option value="2">Pull Up</option>
-                                        <option value="3">Squat</option>
-                                        <option value="4">Crunches</option>
-                                        <option value="5" selected>Planks</option>
-                                        <option value="6">Lunges</option>
-                                    
-                                    </select></td>
-                                <td> <select class="form-select" id="selectExerciseMode2"aria-label="Default select example">
-
-                                        <option value="1">Timer</option>
-                                        <option value="2">Repeat</option>
-
-                                    </select></td>
-                                <td> <select class="form-select" id="selectExerciseValue2" aria-label="Default select example">
-
-                                        <option value="1">15</option>
-                                        <option value="2">30</option>
-
-                                    </select></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td><select class="form-select" id="selectExercise3"  aria-label="Default select example">
-
-                                        <option value="1" selected>Push Up</option>
-                                        <option value="2">Pull Up</option>
-                                        <option value="3">Squat</option>
-                                        <option value="4">Crunches</option>
-                                        <option value="5">Planks</option>
-                                        <option value="6">Lunges</option>
-                                    </select></td>
-                                <td> <select class="form-select" id="selectExerciseMode3" aria-label="Default select example">
-
-                                        <option value="1">Timer</option>
-                                        <option value="2" selected>Repeat</option>
-
-                                    </select></td>
-                                <td> <select class="form-select" id="selectExerciseValue3" aria-label="Default select example">
-
-                                        <option value="1">15</option>
-                                        <option value="2">30</option>
-
-                                    </select></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td><select class="form-select" id="selectExercise4" aria-label="Default select example">
-
-                                        <option value="1" >Push Up</option>
-                                        <option value="2" selected>Pull Up</option>
-                                        <option value="3">Squat</option>
-                                        <option value="4">Crunches</option>
-                                        <option value="5">Planks</option>
-                                        <option value="6">Lunges</option>
-                                    </select></td>
-                                <td> <select class="form-select" id="selectExerciseMode4" aria-label="Default select example">
-
-                                        <option value="1">Timer</option>
-                                        <option value="2">Repeat</option>
-
-                                    </select></td>
-                                <td> <select class="form-select" id="selectExerciseValue4" aria-label="Default select example">
-
-                                        <option value="1">15</option>
-                                        <option value="2">30</option>
-
-                                    </select></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td><select class="form-select " id="selectExercise5" aria-label="Default select example">
-
-                                        <option value="1">Push Up</option>
-                                        <option value="2">Pull Up</option>
-                                        <option value="3" selected>Squat</option>
-                                        <option value="4">Crunches</option>
-                                        <option value="5">Planks</option>
-                                        <option value="6">Lunges</option>
-                                    </select></td>
-                                <td> <select class="form-select" id="selectExerciseMode5" aria-label="Default select example">
-
-                                        <option value="1">Timer</option>
-                                        <option value="2">Repeat</option>
-
-                                    </select></td>
-                                <td> <select class="form-select" id="selectExerciseValue5" aria-label="Default select example">
-
-                                        <option value="1">15</option>
-                                        <option value="2">30</option>
-
-                                    </select></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">6</th>
-                                <td><select class="form-select" id="selectExercise6"  aria-label="Default select example">
-
-                                        <option value="1">Push Up</option>
-                                        <option value="2">Pull Up</option>
-                                        <option value="3" >Squat</option>
-                                        <option value="4" selected>Crunches</option>
-                                        <option value="5">Planks</option>
-                                        <option value="6">Lunges</option>
-                                    </select></td>
-                                <td> <select class="form-select" id="selectExerciseMode6"aria-label="Default select example">
-
-                                        <option value="1">Timer</option>
-                                        <option value="2">Repeat</option>
-
-                                    </select></td>
-                                <td> <select class="form-select" id="selectExerciseValue6" aria-label="Default select example">
-
-                                        <option value="1">15</option>
-                                        <option value="2">30</option>
-
-                                    </select></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <a href="exercisePage.html" class="button green close" id="goToExercisepage" ><img
-                            src="Images/3d-dice-clipart-2.png">Let's do this!</a>
-
-                </div>
-                </div>
-                
-
-            <script src="js/jquery.reveal.js"></script>
-            <script >
-                
-                
-                $(document).ready(function () {
-                    $('#button2').click(function (e) { // Button which will activate our modal
-                        $('#modal2').reveal({ // The item which will be opened with reveal
-                            animation: 'fade', // fade, fadeAndPop, none
-                            animationspeed: 600, // how fast animtions are
-                            closeonbackgroundclick: false, // if you click background will modal close?
-                            dismissmodalclass: 'close' // the class of a button or element that will close an open modal
-                        });
-                        return false;
-                    });
+    <script src="js/jquery.reveal.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#button2').click(function (e) { // Button which will activate our modal
+                $('#modal2').reveal({ // The item which will be opened with reveal
+                    animation: 'fade', // fade, fadeAndPop, none
+                    animationspeed: 600, // how fast animtions are
+                    closeonbackgroundclick: false, // if you click background will modal close?
+                    dismissmodalclass: 'close' // the class of a button or element that will close an open modal
                 });
-                
-            </script>
-             
-              <script>
-                  $(document).ready(function () {
-                      $('#button').click(function (e) { // Button which will activate our modal
-                          $('#modal').reveal({ // The item which will be opened with reveal
-                              animation: 'fade', // fade, fadeAndPop, none
-                              animationspeed: 600, // how fast animtions are
-                              closeonbackgroundclick: false, // if you click background will modal close?
-                              dismissmodalclass: 'close' // the class of a button or element that will close an open modal
-                          });
-                          
-                          return false;
-                      });
-                  });
-              </script>
-             <script type="module" src="js/table.js"></script>
+                return false;
+            });
+            $('#button').click(function (e) { // Button which will activate our modal
+                $('#modal').reveal({ // The item which will be opened with reveal
+                    animation: 'fade', // fade, fadeAndPop, none
+                    animationspeed: 600, // how fast animtions are
+                    closeonbackgroundclick: false, // if you click background will modal close?
+                    dismissmodalclass: 'close' // the class of a button or element that will close an open modal
+                });
+
+                return false;
+            });
+
+        });
+    </script>
+
+
+    <script type="module" src="js/table.js"></script>
 </body>
 
 </html>

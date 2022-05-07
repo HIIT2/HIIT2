@@ -291,8 +291,7 @@ button:hover {
         border-radius:8px;
      
         position:absolute !important;
-        top:50% !important;
-        left:50% !important;
+        
         margin-top:-94px !important;
         margin-left:-180px !important;
         visibility:hidden;
@@ -319,8 +318,7 @@ button:hover {
         border-radius:8px;
      
         position:absolute !important;
-        top:50% !important;
-        left:50% !important;
+        
         margin-top:-94px !important;
         margin-left:-180px !important;
         visibility:hidden;
