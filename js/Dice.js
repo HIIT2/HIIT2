@@ -9,9 +9,9 @@ var exerciseName=""
 
 var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,1,1000)
+var camera = new THREE.PerspectiveCamera(100,window.innerWidth/window.innerHeight,1,1000)
 
-camera.position.set(0,0,4)
+camera.position.set(0,0,3)
 
 
 var renderer = new THREE.WebGLRenderer({antialias: true});
@@ -27,17 +27,22 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
 })
 const exercises=allExerciseData.map(value=>value["exerciseName"])
-  console.log(exercises)
+const loader = new THREE.TextureLoader();
+loader.load("../Images/dice-background/dice6.jpg" , function(texture)
+            {
+             scene.background = texture;  
+            });
+
 // Texture of dice
 function getTexture(text) {
                 const canvas = document.createElement("canvas");
                 canvas.width = 500;
                 canvas.height = 500;
                 const context = canvas.getContext("2d");
-                context.font ="110px Serif";
+                context.font ="70px Zen Dots";
                 context.fillStyle = "#f8f9fa";
                 context.fillRect(0, 0, 500, 500);
-                context.fillStyle = "#343a40";
+                context.fillStyle = "#124587";
                 context.fillRect(2, 2, 496, 496);
                 
                 context.fillStyle = "#f8f9fa"
@@ -48,7 +53,7 @@ function getTexture(text) {
 }
 
 
-var mesh = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 2), [
+var mesh = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), [
     new THREE.MeshLambertMaterial({map: getTexture(exercises[0])}),
     new THREE.MeshLambertMaterial({map: getTexture(exercises[1])}),
     new THREE.MeshLambertMaterial({ map: getTexture(exercises[2])}), 
@@ -61,7 +66,7 @@ var mesh = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 2), [
   mesh.recieveShadow=true
   scene.add(mesh)
   
-  mesh.rotateOnAxis(new THREE.Vector3(-1.1,1.1,0), 16 * Math.PI / 180)
+  mesh.rotateOnAxis(new THREE.Vector3(2,2.1,0), 16 * Math.PI / 180)
     
   
 		
@@ -141,7 +146,10 @@ var render = function() {
     requestAnimationFrame(render);
   
     renderer.render(scene, camera);
-    document.getElementById("diceAnimation").appendChild( renderer.domElement )
+    window.onload = () => {
+      document.getElementById("diceAnimation").appendChild( renderer.domElement )
+  }
+   
    
    
     
@@ -373,7 +381,9 @@ function countdownTimeStart(){
        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
        // Output the result in an element with id="demo"
-       document.getElementById("demo").innerHTML =+ minutes + "m " + seconds + "s ";
+       
+       var demo= document.getElementById("demo")
+       demo.innerHTML = minutes + "m " + seconds + "s ";
       // If the count down is over, write some text 
       if (distance < 0) {
           clearInterval(x);

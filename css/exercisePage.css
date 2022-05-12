@@ -64,4 +64,22 @@ body {
    #exerciseName{
      font-size: 30px;
    }
- 
+   /* Remove the navbar's default margin-bottom and rounded borders */ 
+   .navbar {
+    
+  }
+  
+  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+  .row.content {}
+  
+  /* Set gray background color and 100% height */
+  
+  
+  /* Set black background color, white text and some padding */
+  footer {
+    
+   
+  }
+
+
+  

@@ -20,71 +20,14 @@
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+  <!--font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
   <!--Stylesheets-->
   <link rel="stylesheet" href="css/reveal.css">
-  <link rel="stylesheet" href="css/exerciseLast.css"> 
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      
-      font:black;
-      padding: 15px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;} 
-    }
+  <link rel="stylesheet" href="css/exerciseLast.css">
 
-    ul{
-        list-style-type: square;
-    }
-
-    .nxtbtn{
-        height: 75px; 
-    font-size: 100%; 
-    }
-
-
-    .quote{
-        font-size: 100%; 
-        font-weight: bolder; 
-        border: 2px outset; 
-        font-family: 'Gill Sans', 'Gill Sans MT',  'Trebuchet MS', sans-serif;
-    }
-
-    .ftrcon{
-        height: 75px;
-    }
-
-    .imgstyle{
-        width:80%; position: relative; right: 10px;
-    }
-
-    #ibox{
-        font-size: 100%;
-    }
-  </style>
   <script src="js/jquery-1.4.4.min.js"></script>
   <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
 
@@ -107,167 +50,137 @@
 </head>
 
 <body>
-   <header>
-            <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#navbarExample01"
-        aria-controls="navbarExample01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarExample01">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-        </ul>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+            <li class="nav-item active mx-3">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="layouthelp.html">Exercises help</a>
+            </li>
+          </ul>
+
+          <img src="Images/logosmall.png" alt="logo" height="40px" width="80px">
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!-- texts and timer area    -->
+
+
+
+
+  <div id=" diceAnimation ">
+    <div class="main-wrapper bg-transparent text-light d-flex flex-column justify-content-center align-items-center">
+      <div class="text-center my-2">
+
+
+        <div class="text-center my-1 display-4">
+          <h6 class="text-center my-2">Exercise Duration</h1>
+
+            <h1 id="time" class="text-center my-3 ">00:00:00</h1>
+        </div>
+      </div>
+      <div class="text-center my-3 display-4">
+        <a href="#" id="startButton" class="btn " onclick="clickDice()">Start Exercise</a>
       </div>
     </div>
-  </nav>
-<!-- Navbar -->
-        </header>
-  <div class="container">
-    <div class="p-5 text-center bg-light">
-      <div class="row text-center">
-        <h1 class="mb-3">Get Fit with HIIT<sup><small>2</small></sup></h1>
-      </div>
-      <div class="row text-center">
-        <a href="#" id="startButton" onclick = "clickDice()" style = "position: relative; top: 100px;" >Dice</a>
-      </div>
-      <div class="row text-center">
-        <h1>Exercise Duration</h1>
-        <!--Exercise Duration Counter Begins-->
-        <div id="time">00:00:00</div>
-        <div class="btns-container">
-          <!-- <button id="start_btn" class="btn btn-success" onclick="start()">START</button> -->
-          <button id="pause_btn" class="btn btn-primary" >PAUSE</button>
-          <button id="reset_btn" class="btn btn-warning" >RESET</button>
-        </div>
-        <!--Exercise Duration Counter Ends-->
+  </div>
+
+  <footer id="footer" class=" navbar fixed-bottom py-4 bg-dark text-white-50 justify-content-center">
+    <div class="row">
+      <div class="col-sm float-right">
+        <p>Copyright &copy; HIIT<sup>2</sup></p>
       </div>
 
-
-      <div class="row text-center">
-
-        <div id="diceAnimation"></div>
+      <div class="col-sm float-left">
+        <button id="share_btn" class="btn btn-success">SHARE</button>
       </div>
-      <footer id="footer" class=" navbar fixed-bottom py-4 bg-dark text-white-50 justify-content-center">
-        <div class="row">
-          <div class="col-sm float-right">
-            <p>Copyright &copy; HIIT<sup>2</sup></p>
-          </div>
-
-          <div class="col-sm float-left">
-            <button id="share_btn" class="btn btn-success">SHARE</button>
-          </div>
-        </div>
     </div>
-    </footer>
+
+  </footer>
+
+  <!-- Modal -->
+
+  <div id="modal" class="modal-box">
+ 
+    <section class="modal-content container text-light d-flex flex-column justify-content-start">
     
-   <div id="modal" class="modal-box">
-    
+      <h2 id="exerciseNameText" class="text-center my-4"></h2>
+      
 
-  
-
-
-    
-       
-
-        <div class="col text-center">
-
-       
-  
-       
-
+      <div class=" d-flex flex-row justify-content-center" id="exerciseDetails ">
+        <img class="imgstyle mx-3" id="exerciseImg" alt="exercise Image">
+        <div class=" d-flex flex-column m-3">
+        <div id="timerOrRepeat"  class=" d-flex flex-column m-3 justify-content-center align-content-center">
+          <div id="ibox" class="mx-auto">
+            <h3 id="demo" class="text-light text-center m-3"></h3>
+            <button class="close btn btn-primary btn-lg btn-block" id="timerClose">New Exercise</button>
+          </div>
+          <div id="ibox-repeat" class="mx-auto">
           
-       
-
-      </div>
-
-      <div class="container-fluid text-center">  
-    
-        <div class="row content">
+            <h3 id="repeatValue" class="text-center"></h3>
+            <div>Repeat</div>
             
-
-          <div class=" col-xs-12 col-sm-3 col-md-3 sidenav">
-              
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-6 text-left">
-              <h2 style = "text-decoration: underline; font-size: 450%; ">Tips for  <span id="exerciseNameText"></span> </h2>
-              
-              <ul id="exerciseTips" style = "position: relative; top: 60px; font-size:200%;">
-              
-              
-              
-              </ul>
-              <hr style = "position:relative; top:65px;">
-              <img class="imgstyle" id="exerciseImg" height="200px" width="200px" style = "position: relative; top: 100px;">
-            
-      
-            
-          </div>
-          <div class=" col-xs-12 col-sm-3 col-md-3 sidenav">
-              <div id="ibox">
-                 
-                  <div style = "font-size: 275%; padding: 15px;">Countdown</div>
-                  <h2 id="demo" style = "padding:15px;"></h2>
-                  <button class="close " id="timerClose" style = "position: relative; left:75px; top: 25px;:15px; padding">New Exercise</button>
-              
-              </div>
-              <div id="ibox-repeat">
-                  <div>Repeat</div>
-                  <h2 id="repeatValue"></h2>
-                  <button class="close "  id="newExercise" style = "position: relative; left:75px; top: 25px;">New Exercise</button>
-              </div>
+            <button class="close close btn btn-primary btn-lg btn-block" id="newExercise">New Exercise</button>
           </div>
         </div>
-      </div>
-      
-      <footer class="container-fluid text-center">
-          <div class=" ftrcon row" >
-      
-              <div class="col col-lg-8" style = "position: relative; top: 100px;">
-      
-                  <p  class = "quote" id="mQuoteSelect" style = "font-size: 200%;">
-                      
-                  </p>
-      
-              </div>
-              <div class=" nxtbtn col col-lg-4 " style = "position: relative; top: 100px;">
-              <span>
-                  <button onclick="pause()">pause</button>
-                  <button onclick="reset()">reset</button>
-              </span>
-      
-              <button onclick=" dataForShare()"> I am done</button>
-              </div>
-          </div>
-        
-      </footer>
-      
-      
-    </div>
-    </div> 
-   
-      <div id="invisibleVariable"> sd</div>
-      <script src="js/jquery.reveal.js"></script>
-    
-      
-      
-      <script  src="js/exerciseFunctions.js"></script>
-      <script  src="js/Dice.js"></script>
-      <script src="js/mquote.js"></script>
 
+        <ul id="exerciseTips">
+
+        </ul>
+        <div id="modal-buttons" class=" m-3 text-center">
+          
+            <button onclick="pause()" class="btn btn-primary" >Pause Exercise</button>
+            <button onclick="reset()" class="btn btn-primary" >Reset Exercise</button>
+          <button onclick=" dataForShare()" class="btn btn-primary" > I am done</button>
+        </div>
+        <p class="quote m-3 p-3 text-light text-center" id="mQuoteSelect">
+       
+        </p>
+       
+      </div>
+    </div>
+
+
+
+    
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+  <script src="js/jquery.reveal.js"></script>
+
+
+
+  <script src="js/exerciseFunctions.js"></script>
+
+  <script src="js/mquote.js"></script>
+  <script src="js/Dice.js" defer></script>
 </body>
 
 </html>
