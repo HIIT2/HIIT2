@@ -28,7 +28,7 @@ window.addEventListener('resize', () => {
 })
 const exercises=allExerciseData.map(value=>value["exerciseName"])
 const loader = new THREE.TextureLoader();
-loader.load("../Images/dice-background/dice6.jpg" , function(texture)
+loader.load("../Images/dice-background/6.jpg" , function(texture)
             {
              scene.background = texture;  
             });
