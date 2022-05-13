@@ -179,14 +179,23 @@ async function asyncCall() {
   // expected output: "resolved"
 }
 
-
+function clickDice(){
+  exerciseStarted=!exerciseStarted
+  if(exerciseStarted){
+    start();
+   document.getElementById("startButton").style.display="none"
+   
+  }
+  
+}
 
 
 
 document.getElementById("startButton").addEventListener("click", ()=>{
   clicked=true
-  asyncCall().then(result => {
+  asyncCall().then(()=> {
     //this function comes from dice animation
+    
     RandomExercise(random)
     document.getElementById("exerciseNameText").innerHTML = exerciseName;
 
@@ -195,7 +204,7 @@ document.getElementById("startButton").addEventListener("click", ()=>{
     console.log(exerciseName)
     exerciseImg = document.getElementById("exerciseImg")
     exerciseImg.setAttribute("src", exerciseImageUrl)
-    exerciseStarted = true
+   
    
     $('#modal').reveal({ // The item which will be opened with reveal
       animation: 'fade', // fade, fadeAndPop, none
@@ -203,17 +212,22 @@ document.getElementById("startButton").addEventListener("click", ()=>{
       closeonbackgroundclick: false, // if you click background modal will close
       dismissmodalclass: 'close' // the class of a button or element that will close an open modal
     })
+    
     fetchJson()
     countdownOrRep()
     randomQuote()
     dataForShareButton()
+    clickDice()
+    
+    
+  
   })
-
+ 
 
 })
 document.getElementById("newExercise").addEventListener("click", ()=>{
   clicked=true
-  asyncCall().then(result => {
+  asyncCall().then(() => {
     RandomExercise(random)
     document.getElementById("exerciseNameText").innerHTML = exerciseName;
 
@@ -222,7 +236,7 @@ document.getElementById("newExercise").addEventListener("click", ()=>{
     console.log(exerciseName)
     exerciseImg = document.getElementById("exerciseImg")
     exerciseImg.setAttribute("src", exerciseImageUrl)
-    exerciseStarted = true
+   
    
     $('#modal').reveal({ // The item which will be opened with reveal
       animation: 'fade', // fade, fadeAndPop, none
@@ -240,7 +254,7 @@ document.getElementById("newExercise").addEventListener("click", ()=>{
 })
 document.getElementById("timerClose").addEventListener("click", ()=>{
   clicked=true
-  asyncCall().then(result => {
+  asyncCall().then(()=> {
     RandomExercise(random)
     document.getElementById("exerciseNameText").innerHTML = exerciseName;
 
@@ -249,7 +263,7 @@ document.getElementById("timerClose").addEventListener("click", ()=>{
     console.log(exerciseName)
     exerciseImg = document.getElementById("exerciseImg")
     exerciseImg.setAttribute("src", exerciseImageUrl)
-    exerciseStarted = true
+   
    
     $('#modal').reveal({ // The item which will be opened with reveal
       animation: 'fade', // fade, fadeAndPop, none
@@ -353,7 +367,7 @@ function countdownOrRep(){
 
 // timer for seconds 
 function countdownTimeStart(){
-
+  document.getElementById("demo").innerHTML = ""
   let countDownDate = new Date().getTime()+(timerOrRepeatValue*1000+1500);
  
   // Update the count down every 1 second
@@ -387,7 +401,7 @@ function countdownTimeStart(){
       // If the count down is over, write some text 
       if (distance < 0) {
           clearInterval(x);
-          document.getElementById("demo").innerHTML = "Done!";
+          document.getElementById("demo").innerHTML = "";
           document.getElementById("timerClose").style.display="block"
       } 
   }, 1000);

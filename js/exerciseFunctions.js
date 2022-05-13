@@ -3,8 +3,7 @@ const start_btn = document.querySelector('#start_btn');
 const pause_btn = document.querySelector('#pause_btn');
 const reset_btn = document.querySelector('#reset_btn');
 
-let time = 0,
-  interval;
+let time = 0, interval;
 
 function showTime() {
   time += 1;
@@ -13,8 +12,6 @@ function showTime() {
 
 function start() {
   interval = setInterval(showTime, 1000);
-  hideBtn([start_btn]);
-  showBtn([pause_btn, reset_btn]);
   exerciseStarted = true
 }
 
@@ -22,10 +19,10 @@ function pause() {
   if (interval) {
     clearInterval(interval);
     interval = null;
-    pause_btn.innerHTML = 'RESUME';
+   
   } else {
     interval = setInterval(showTime, 1000);
-    pause_btn.innerHTML = 'PAUSE';
+    
     exerciseStarted = true
     pauseClicked=true;
   }
@@ -34,11 +31,10 @@ function pause() {
 function reset() {
   clearInterval(interval);
   interval = null;
-  pause_btn.innerHTML = 'PAUSE';
+  
   time = 0;
   timer.innerHTML = toHHMMSS(time);
-  hideBtn([pause_btn, reset_btn]);
-  showBtn([start_btn]);
+ 
   exerciseStarted = false
   resetClicked=true
 }
@@ -55,13 +51,7 @@ function toHHMMSS(time) {
   return hours + ':' + minutes + ':' + seconds;
 }
 
-function showBtn(btnArr) {
-  btnArr.forEach((btn) => (btn.style.display = 'inline-block'));
-}
 
-// function hideBtn(btnArr) {
-//   btnArr.forEach((btn) => (btn.style.display = 'none'));
-// }
 
 const shareBtn = document.getElementById('share_btn')
 shareBtn.addEventListener('click', event => {
@@ -86,9 +76,4 @@ shareBtn.addEventListener('click', event => {
   }
 
 });
-function clickDice(){
-  if(!exerciseStarted){
-    start();
-  }
-  
-}
+
