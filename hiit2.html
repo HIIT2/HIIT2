@@ -1,413 +1,154 @@
-* {
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-}
-html {
-  font-family: system-ui, sans-serif;
-}
-body {
-  background: linear-gradient(#dedddd,#676767);
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 90vh;
-  overflow: hidden;
-  width: 100%;
-
-}
-.dice {
-  align-items: center;
-  display: grid;
-  grid-gap: 0rem;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-  grid-template-rows: auto;
-  justify-items: center;
-  padding: 0rem;
-  perspective: 800px;
-}
-
-.timer {
-  align-items: center;
-  display: grid;
-  grid-gap: 0rem;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-  grid-template-rows: auto;
-  justify-items: center;
-  padding: 0rem;
-  perspective: 800px;
-}
-
-.die-list {
-  display: grid;
-  grid-template-columns: 2fr;
-  grid-template-rows: 1fr;
-  height: 8rem;
-  list-style-type: none;
-  transform-style: preserve-3d;
-  width: 6rem;
-}
-.even-roll {
-  transition: transform 1.5s ease-out;
-}
-.odd-roll {
-  transition: transform 1.25s ease-out;
-}
-.die-item {
-  background-color: black;
-  box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
-    inset 0.5rem -0.25rem 0.5rem rgba(0, 0, 0, 0.15);
-  display: grid;
-  grid-column: 1;
-  grid-row: 1;
-  height: 100%;
-  padding: 1rem;
-  width: 100%;
-  align-items: center;
-}
-
-.die-item[data-side="6"] {
-  background-color: darkgrey;
-}
-.die-item[data-side="5"] {
-    background-color:  darkgrey;
-}
-.die-item[data-side="4"] {
-    background-color: darkgrey;
-}
-.die-item[data-side="3"] {
-    background-color: darkgrey;
-}
-.die-item[data-side="2"] {
-    background-color: darkgrey;
-}
-.die-item[data-side="1"] {
-  background-color:darkgrey;
-}
-.even-roll[data-roll="1"] {
-  transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg);
-}
-.even-roll[data-roll="2"] {
-  transform: rotateX(450deg) rotateY(720deg) rotateZ(360deg);
-}
-.even-roll[data-roll="3"] {
-  transform: rotateX(360deg) rotateY(630deg) rotateZ(360deg);
-}
-.even-roll[data-roll="4"] {
-  transform: rotateX(360deg) rotateY(810deg) rotateZ(360deg);
-}
-.even-roll[data-roll="5"] {
-  transform: rotateX(270deg) rotateY(720deg) rotateZ(360deg);
-}
-.even-roll[data-roll="6"] {
-  transform: rotateX(360deg) rotateY(900deg) rotateZ(360deg);
-}
-.odd-roll[data-roll="1"] {
-  transform: rotateX(-360deg) rotateY(-720deg) rotateZ(-360deg);
-}
-.odd-roll[data-roll="2"] {
-  transform: rotateX(-270deg) rotateY(-720deg) rotateZ(-360deg);
-}
-.odd-roll[data-roll="3"] {
-  transform: rotateX(-360deg) rotateY(-810deg) rotateZ(-360deg);
-}
-.odd-roll[data-roll="4"] {
-  transform: rotateX(-360deg) rotateY(-630deg) rotateZ(-360deg);
-}
-.odd-roll[data-roll="5"] {
-  transform: rotateX(-450deg) rotateY(-720deg) rotateZ(-360deg);
-}
-.odd-roll[data-roll="6"] {
-  transform: rotateX(-360deg) rotateY(-900deg) rotateZ(-360deg);
-}
-[data-side="1"] {
-  transform: rotate3d(0, 0, 0, 90deg) translateZ(4rem);
-}
-[data-side="2"] {
-  transform: rotate3d(-1, 0, 0, 90deg) translateZ(4rem);
-}
-[data-side="3"] {
-  transform: rotate3d(0, 1, 0, 90deg) translateZ(4rem);
-}
-[data-side="4"] {
-  transform: rotate3d(0, -1, 0, 90deg) translateZ(4rem);
-}
-[data-side="5"] {
-  transform: rotate3d(1, 0, 0, 90deg) translateZ(4rem);
-}
-[data-side="6"] {
-  transform: rotate3d(1, 0, 0, 180deg) translateZ(4rem);
-}
-[data-side="1"] .dot:nth-of-type(1) {
-  grid-area: five;
-}
-[data-side="2"] .dot:nth-of-type(1) {
-  grid-area: one;
-}
-[data-side="2"] .dot:nth-of-type(2) {
-  grid-area: nine;
-}
-[data-side="3"] .dot:nth-of-type(1) {
-  grid-area: one;
-}
-[data-side="3"] .dot:nth-of-type(2) {
-  grid-area: five;
-}
-[data-side="3"] .dot:nth-of-type(3) {
-  grid-area: nine;
-}
-[data-side="4"] .dot:nth-of-type(1) {
-  grid-area: one;
-}
-[data-side="4"] .dot:nth-of-type(2) {
-  grid-area: three;
-}
-[data-side="4"] .dot:nth-of-type(3) {
-  grid-area: seven;
-}
-[data-side="4"] .dot:nth-of-type(4) {
-  grid-area: nine;
-}
-[data-side="5"] .dot:nth-of-type(1) {
-  grid-area: one;
-}
-[data-side="5"] .dot:nth-of-type(2) {
-  grid-area: three;
-}
-[data-side="5"] .dot:nth-of-type(3) {
-  grid-area: five;
-}
-[data-side="5"] .dot:nth-of-type(4) {
-  grid-area: seven;
-}
-[data-side="5"] .dot:nth-of-type(5) {
-  grid-area: nine;
-}
-[data-side="6"] .dot:nth-of-type(1) {
-  grid-area: one;
-}
-[data-side="6"] .dot:nth-of-type(2) {
-  grid-area: three;
-}
-[data-side="6"] .dot:nth-of-type(3) {
-  grid-area: four;
-}
-[data-side="6"] .dot:nth-of-type(4) {
-  grid-area: six;
-}
-[data-side="6"] .dot:nth-of-type(5) {
-  grid-area: seven;
-}
-[data-side="6"] .dot:nth-of-type(6) {
-  grid-area: nine;
-}
-
-#roll-button, #roll-button2 {
-        width:100px;
-        height:50px;
-     
-        background-image: -webkit-linear-gradient(top, rgb(247, 243, 246), rgb(40, 14, 240));
-        background-image: -moz-linear-gradient(top, rgb(247, 243, 246), rgb(40, 14, 240));
-        background-image: -o-linear-gradient(top, rgb(247, 243, 246), rgb(40, 14, 240));
-        background-image: -ms-linear-gradient(top, rgb(247, 243, 246), rgb(40, 14, 240));
-        background-image: linear-gradient(top, rgb(247, 243, 246), rgb(40, 14, 240));
-        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#feda71', EndColorStr='#feba48');
-     
-        border:1px solid black;
-     
-        -webkit-box-shadow:
-            inset 0px 1px 0px #fee395,
-                  0px 1px 1px rgba(0,0,0,.15);
-        -moz-box-shadow:
-            inset 0px 1px 0px #fee395,
-                  0px 1px 1px rgba(0,0,0,.15);
-        box-shadow:
-            inset 0px 1px 0px #fee395,
-                  0px 1px 1px rgba(0,0,0,.15);
-     
-        -webkit-border-radius:4px;
-        -moz-border-radius:4px;
-        border-radius:4px;
-     
-        font-size:13px;
-        font-weight:bold;
-        text-align:center;
-        line-height:30px;
-     
-        color:#050300;
-        text-shadow:0px 1px 0px rgba(255,255,255,.4);
-     
-        position:absolute;
-        top:20%;
-        left:50%;
-        margin-top:-14px;
-        margin-left:-39px;
-    }
-
-
-button:hover {
-  cursor: pointer;
-}
-#time {
-    font-size: 50px;
-  }
-  
-  .btns-container {
-    margin: 10px 0;
-    align-items: center;
-  }
-  
-  
-  button {
-      padding: 10px !important;
-      cursor: pointer;
-      margin: 10px;
-  }
-  
-  button:hover {
-    filter: grayscale(0.7);
-  }
-  button:focus {
-    outline: none;
-  }
-  
-  #pause_btn {
-  
-    display: none;
-  }
-  #reset_btn {
-  
-    display: none;
-  }
-  
-  #share_btn {
-      background: greenyellow;
-      color: black;
-    }
-  
-    #share-text {
-        display: none;
- 
-    }
-    #exerciseName{
-      font-size: 30px;
-    }
-    #modal {
-
-        width:500px;
-        height:250px;
-        padding:8px;
-     
-        background:rgba(0,0,0,.3);
-     
-        -webkit-border-radius:8px;
-        -moz-border-radius:8px;
-        border-radius:8px;
-     
-        position:absolute !important;
-        top:50% !important;
-        left:50% !important;
-        margin-top:-94px !important;
-        margin-left:-180px !important;
-        visibility:hidden;
-        z-index:101;
-    }
-    .secondPopup{
-        display: flex;
-          align-items: center;
-     
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HIIT&#xb2; - Random Workout</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"
+    integrity="sha512-NLtnLBS9Q2w7GKK9rKxdtgL7rA7CAS85uC/0xd9im4J/yOL4F9ZVlv634NAM7run8hz3wI2GabaA6vv8vJtHiQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="js/jquery.countdown360.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/jquery-1.4.4.min.js"></script>
+    <style>
+      #roll-button2{
+        display:none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+      <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarExample01"
+      aria-controls="navbarExample01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      >
+      <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarExample01">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" aria-current="page" href="indexb.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      </ul>
+      </div>
+      </div>
+      </nav>
+      <!-- Navbar -->
+      </header>
+    <div class="dice">
+      <ol class="die-list even-roll" data-roll="1" id="die-1">
+        <li class="die-item" data-side="1">
+          <span id="exerciseName1"></span>
+        </li>
+        <li class="die-item" data-side="2">
+            <span id="exerciseName2"></span>
+        </li>
+        <li class="die-item" data-side="3">
+            <span id="exerciseName3"></span>
+        </li>
+        <li class="die-item" data-side="4">
+            <span id="exerciseName4"></span>
+        </li>
+        <li class="die-item" data-side="5">
+            <span id="exerciseName5"></span>
+        </li>
+        <li class="die-item" data-side="6">
+            <span id="exerciseName6"></span>
+        </li>
+      </ol>
+      <ol class="die-list odd-roll" data-roll="1" id="die-2">
+        <li class="die-item" data-side="1">
+            <span id="interval1"></span>
+        </li>
+        <li class="die-item" data-side="2">
+            <span id="interval2"></span>
+        </li>
+        <li class="die-item" data-side="3">
+            <span id="interval3"></span>
+        </li>
+        <li class="die-item" data-side="4">
+            <span id="reps1"></span>
+        </li>
+        <li class="die-item" data-side="5">
+            <span id="reps2"></span>
+        </li>
+        <li class="die-item" data-side="6">
+            <span id="reps3"></span>
+        </li>
+      </ol>
+    </div>
+    <button type="button" id="roll-button">Roll Dice</button>
+    <button type="button" id="roll-button2">Roll Again</button>
+       <!--Exercise Duration Counter Begins-->
+       <div class="timer">
+       <div id="time">00:00:00</div>
+       <div class="btns-container">
+         <button id="start_btn" class="btn btn-success" onclick="start()">START</button>
+         <button id="pause_btn" class="btn btn-primary" onclick="pause()">PAUSE</button>
+         <button id="done_btn" class="btn btn-warning">DONE</button>
+       </div>
+       </div>
+       <!--Exercise Duration Counter Ends-->
       
+       <footer id="footer" class=" navbar fixed-bottom py-4 bg-dark text-white-50 justify-content-center">
+        <div class="row">
+          <div class="col-sm float-right">
+            <p>Copyright &copy; HIIT<sup>2</sup></p>
+          </div>
+
+          <div class="col-sm float-left">
+            <button id="share_btn" class="btn btn-success">SHARE</button>
+          </div>
+        </div>
+    </footer>
       
+    <div id="modal" class="modal-box">
+      <div id="modal-heading">
+          Are you done with your workout?
+      </div>
+
+      <div id="modal-content">
+          <p>
+          </p>
+          <div id="modal-buttons"> 
+              <a style="height: 70px;" href="#" class="btn btn-sucess close" id="button2">Yes, I just got Fit with HIIT!</a>
+              <a style="height: 70px;" href="hiit2.html" class="btn btn-sucess" id="button2">Oops! I'm still working out.</a>
+          </div>
+
+
+
+
+      </div>
+  </div>
+    <script src="./js/app.js"></script>
+    <script src="js/jquery.reveal.js"></script>
+    <script>
+    
+            $('#done_btn').click(function (e) { // Button which will activate our modal
+                $('#modal').reveal({ // The item which will be opened with reveal
+                    animation: 'fade', // fade, fadeAndPop, none
+                    animationspeed: 600, // how fast animtions are
+                    closeonbackgroundclick: false, // if you click background will modal close?
+                    dismissmodalclass: 'close' // the class of a button or element that will close an open modal
+                });
+                return false;
+            });
         
-      
-    }
-    #modal2 {
-        width:500px;
-        height:250px;
-        padding:8px;
-     
-        background:rgba(0,0,0,.3);
-     
-        -webkit-border-radius:8px;
-        -moz-border-radius:8px;
-        border-radius:8px;
-     
-        position:absolute !important;
-        top:50% !important;
-        left:50% !important;
-        margin-top:-94px !important;
-        margin-left:-180px !important;
-        visibility:hidden;
-        z-index:101;
-    }
-    
-    .heading {
-        width:500px;
-        height:40px;
-     
-        background-image: -webkit-linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
-        background-image: -moz-linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
-        background-image: -o-linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
-        background-image: -ms-linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
-        background-image: linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
-        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f9f9f9', EndColorStr='#e9e9e9');
-     
-        border-bottom:1px solid #bababa;
-     
-        -webkit-box-shadow:
-            inset 0px -1px 0px #fff,
-            0px 1px 3px rgba(0,0,0,.08);
-        -moz-box-shadow:
-            inset 0px -1px 0px #fff,
-            0px 1px 3px rgba(0,0,0,.08);
-        box-shadow:
-            inset 0px -1px 0px #fff,
-            0px 1px 3px rgba(0,0,0,.08);
-     
-        -webkit-border-radius:4px 4px 0px 0px;
-        -moz-border-radius:4px 4px 0px 0px;
-        border-radius:4px 4px 0px 0px;
-     
-        font-size:14px;
-        font-weight:bold;
-        text-align:center;
-        line-height:44px;
-     
-        color:#444444;
-        text-shadow:0px 1px 0px #fff;
-    }
-    
-    .content {
-        width:500px;
-        height:250px;
-     
-        background:#fcfcfc;
-     
-        -webkit-box-shadow:0px 1px 3px rgba(0,0,0,.25);
-        -moz-box-shadow:0px 1px 3px rgba(0,0,0,.25);
-        box-shadow:0px 1px 3px rgba(0,0,0,.25);
-     
-        -webkit-border-radius:0px 0px 4px 4px;
-        -moz-border-radius:0px 0px 4px 4px;
-        border-radius:0px 0px 4px 4px;
-    }
-     
-    .content p {
-        font-size:13px;
-        font-weight:normal;
-        text-align:center;
-        line-height:22px;
-        color:#555555;
-     
-        width:100%;
-        float: left;
-     
-        margin:19px 0;
-    }
-
-h4 {text-align: center;
-margin-top: 50px;}
-@media (min-width: 900px) {
-  .dice {
-    perspective: 1300px;
-  }
-}
+          </script>
+  </body>
+</html>
