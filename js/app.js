@@ -9,32 +9,27 @@ if (navigator.serviceWorker) {
 }
 
 function rollDice() {
-var roll = 0;
-if (roll == 0) {
-
     const dice = [...document.querySelectorAll(".die-list")];
     dice.forEach(die => {
       toggleClasses(die);
       die.dataset.roll = getRandomNumber(1, 6);
       start();
-      var roll = 1;
+      document.getElementById('roll-button').style.display = "none";
+      document.getElementById('roll-button2').style.display = "block";
+
     });
   
-  }
-
-else {
-  function rollDice() {
-    const dice = [...document.querySelectorAll(".die-list")];
-    dice.forEach(die => {
-      toggleClasses(die);
-      die.dataset.roll = getRandomNumber(1, 6);
-      var roll = roll + 1;
-    });
-
-}
-}
 }
 
+function rollDice2() {
+  const dice = [...document.querySelectorAll(".die-list")];
+  dice.forEach(die => {
+    toggleClasses(die);
+    die.dataset.roll = getRandomNumber(1, 6);
+
+  });
+
+}
 
 function toggleClasses(die) {
   die.classList.toggle("odd-roll");
@@ -48,6 +43,7 @@ function getRandomNumber(min, max) {
 }
 
 document.getElementById("roll-button").addEventListener("click", rollDice);
+document.getElementById("roll-button2").addEventListener("click", rollDice2);
 
 
 var exerciseName1="Push Ups"
@@ -79,6 +75,15 @@ document.getElementById("reps1").innerHTML="<h4>"+reps1+"</h4>"
 document.getElementById("reps2").innerHTML="<h4>"+reps2+"</h4>"
 document.getElementById("reps3").innerHTML="<h4>"+reps3+"</h4>"
 
+
+
+//Capture each exercise
+var roll1 = "";
+var roll2 = "";
+var roll3 = "";
+
+
+
 //Count up timer
 const timer = document.querySelector('#time');
 const start_btn = document.querySelector('#start_btn');
@@ -96,7 +101,7 @@ function showTime() {
 function start() {
   interval = setInterval(showTime, 1000);
   hideBtn([start_btn]);
-  showBtn([pause_btn, reset_btn]);
+  showBtn([pause_btn, done_btn]);
 }
 
 function pause() {
@@ -110,13 +115,14 @@ function pause() {
   }
 }
 
+
 function reset() {
   clearInterval(interval);
   interval = null;
   pause_btn.innerHTML = 'PAUSE';
   time = 0;
   timer.innerHTML = toHHMMSS(time);
-  hideBtn([pause_btn, reset_btn]);
+  hideBtn([pause_btn, done_btn]);
   showBtn([start_btn]);
 }
 
