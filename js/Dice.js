@@ -425,7 +425,7 @@ function fetchJson() {
     else if(timerOrRepeat==="Repeat"){
       document.getElementById("ibox").style.display="none"
       document.getElementById("ibox-repeat").style.display="inline"
-      document.getElementById("repeatValue").innerHTML=timerOrRepeatValue
+      document.getElementById("repeatValue").innerHTML=timerOrRepeatValue 
       console.log("rep")
   
     }

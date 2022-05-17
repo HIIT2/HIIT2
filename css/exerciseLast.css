@@ -261,7 +261,9 @@ body {
 h2,#ibox,#exerciseTips,#mQuoteSelect,#ibox-repeat,#demo{
     z-index: 1000;
   }
- 
+  #ibox-repeat{
+  
+  }
 #demo,#repeatValue{
     font-size: 4rem !important;
 }

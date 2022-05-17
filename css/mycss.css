@@ -328,44 +328,7 @@ select{
 }
 @media only screen and (max-width: 767px) {
          
-    #modal {
-        width:284px;
-        height:156px;
-        padding:8px;
- 
-        margin-left:-150px !important;
-        margin-top:-78px;
-    }
-    #heading {
-        width:284px;
-        height:28px;
- 
-        line-height:28px;
-        font-size:0.688em;
-    }
-    #content {
-        width:284px;
-        height:128px;
-    }
-    #content p {
-        width:284px;
-        font-size:0.688em;
-    }
-    .button img { 
-        width:23px;
-        height:23px;
-    }
-    .button {
-        width:108px;
-        height:23px;
- 
-        line-height:23px;
-        font-size:0.688em;
-    }
-    .button.green {
-        margin:0 4px 0 28px !important;
-    }
-
+   
 }
 
 /* the part I made for new design index */
