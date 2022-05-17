@@ -10,13 +10,14 @@ if (navigator.serviceWorker) {
 
 function rollDice() {
     const dice = [...document.querySelectorAll(".die-list")];
+    start();
     dice.forEach(die => {
       toggleClasses(die);
       die.dataset.roll = getRandomNumber(1, 6);
-      start();
+      
       document.getElementById('roll-button').style.display = "none";
       document.getElementById('roll-button2').style.display = "block";
-
+      console.log("here")
     });
   
 }
