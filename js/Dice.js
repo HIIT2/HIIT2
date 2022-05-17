@@ -195,7 +195,7 @@ document.getElementById("startButton").addEventListener("click", ()=>{
   clicked=true
   asyncCall().then(()=> {
     //this function comes from dice animation
-    
+    getCounterData()
     RandomExercise(random)
     document.getElementById("exerciseNameText").innerHTML = exerciseName;
 
@@ -228,6 +228,7 @@ document.getElementById("startButton").addEventListener("click", ()=>{
 document.getElementById("newExercise").addEventListener("click", ()=>{
   clicked=true
   asyncCall().then(() => {
+    getCounterData()
     RandomExercise(random)
     document.getElementById("exerciseNameText").innerHTML = exerciseName;
 
@@ -255,6 +256,7 @@ document.getElementById("newExercise").addEventListener("click", ()=>{
 document.getElementById("timerClose").addEventListener("click", ()=>{
   clicked=true
   asyncCall().then(()=> {
+    getCounterData()
     RandomExercise(random)
     document.getElementById("exerciseNameText").innerHTML = exerciseName;
 
@@ -342,70 +344,95 @@ function fetchJson() {
       if(dataFromStorage[i].exerciseName===exerciseName){
         timerOrRepeat=dataFromStorage[i].exerciseMode 
         timerOrRepeatValue=dataFromStorage[i].exerciseValue
+       
       }
     }
     
 } 
-function countdownOrRep(){
-  if(timerOrRepeat==="Timer"){
-    document.getElementById("ibox").style.display="inline"
-    document.getElementById("ibox-repeat").style.display="none"
-    document.getElementById("timerClose").style.display="none"
-    console.log("timer")
-    countdownTimeStart()
-    
 
-  }
-  else if(timerOrRepeat==="Repeat"){
-    document.getElementById("ibox").style.display="none"
-    document.getElementById("ibox-repeat").style.display="inline"
-    document.getElementById("repeatValue").innerHTML=timerOrRepeatValue
-    console.log("rep")
-
-  }
-}
 
 // timer for seconds 
-function countdownTimeStart(){
+
   document.getElementById("demo").innerHTML = ""
-  let countDownDate = new Date().getTime()+(timerOrRepeatValue*1000+1500);
- 
-  // Update the count down every 1 second
-  var x = setInterval(function() {
-    let now = new Date().getTime()
-      // Get todays date and time
-      
-      var distance
-      
-     
-      if(!pauseClicked&&!resetClicked){
-         distance = countDownDate - now;
-      }
-      else if(pauseClicked){
-        distance = distance
-      }
-      else if(resetClicked){
-        clearInterval(x);
-      }
-       // Find the distance between now an the count down date
-       
-      
-       // Time calculations for days, hours, minutes and seconds
-      
-       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-       // Output the result in an element with id="demo"
-       
-       var demo= document.getElementById("demo")
-       demo.innerHTML = minutes + "m " + seconds + "s ";
-      // If the count down is over, write some text 
-      if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("demo").innerHTML = "";
-          document.getElementById("timerClose").style.display="block"
-      } 
-  }, 1000);
+  var current_time, deadline
+  
+  function getCounterData(){
+  current_time = Date.parse(new Date());
+  
+  deadline = new Date(current_time + timerOrRepeatValue*1000);
   }
+  
+  function time_remaining(endtime){
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor( (t/1000) % 60 );
+    var minutes = Math.floor( (t/1000/60) % 60 );
+  
+    return {'total':t, 'minutes':minutes, 'seconds':seconds};
+  }
+  
+  var timeinterval;
+  function run_clock(id,endtime){
+    var clock = document.getElementById(id);
+    function update_clock(){
+      var t = time_remaining(endtime);
+      clock.innerHTML = t.minutes+t.seconds;
+      if(t.total<=0){ 
+        document.getElementById("demo").innerHTML = "";
+        document.getElementById("timerClose").style.display="block"
+        clearInterval(timeinterval); }
+    }
+    update_clock(); // run function once at first to avoid delay
+    timeinterval = setInterval(update_clock,1000);
+  }
+  
+
+  
+  var paused = false; // is the clock paused?
+  var time_left; // time left on the clock when paused
+  
+  function pause_countDown() {
+    if(!paused){
+      paused = true;
+      clearInterval(timeinterval); // stop the clock
+      time_left = time_remaining(deadline).total; // preserve remaining time
+      document.getElementById("pauseExercise").innerHTML="Continue Exercise"
+    }
+  }
+  
+  function resume_countDown() {
+    if(paused){
+      paused = false;
+      
+      // update the deadline to preserve the amount of time remaining
+      deadline = new Date(Date.parse(new Date()) + time_left);
+  
+      // start the clock
+      run_clock('demo',deadline);
+      document.getElementById("pauseExercise").innerHTML="Pause Exercise"
+    }
+  }
+  function countdownOrRep(){
+    if(timerOrRepeat==="Timer"){
+      document.getElementById("ibox").style.display="inline"
+      document.getElementById("ibox-repeat").style.display="none"
+      document.getElementById("timerClose").style.display="none"
+      getCounterData()
+      run_clock('demo',deadline)
+    
+      
+  
+    }
+    else if(timerOrRepeat==="Repeat"){
+      document.getElementById("ibox").style.display="none"
+      document.getElementById("ibox-repeat").style.display="inline"
+      document.getElementById("repeatValue").innerHTML=timerOrRepeatValue
+      console.log("rep")
+  
+    }
+  }
+ 
+  
+  
  
   function dataForShareButton(){
     
@@ -421,3 +448,39 @@ function countdownTimeStart(){
   }
     
   
+
+// I am done modal
+
+document.getElementById("done").addEventListener("click", ()=>{
+  document.getElementById("timeTotal").innerHTML=time;
+  for(let i=0;i<dataArray.length;i++){
+    if(dataArray[i][1]==="Timer"){
+      var item=document.createElement("li")
+      item.appendChild(document.createTextNode(dataArray[i][0]+" "+dataArray[i][2]+ " seconds"))
+    document.getElementById("exerciseCompleted").appendChild(item)
+    }
+    else if(dataArray[i][1]==="Repeat"){
+      var item=document.createElement("li")
+      item.appendChild(document.createTextNode(dataArray[i][0]+" "+dataArray[i][2]+ " repeat"))
+    document.getElementById("exerciseCompleted").appendChild(item)
+    }
+    
+  }
+  
+  dataForShareButton()
+  reset()
+  
+    
+   
+   
+    $('#modal-done').reveal({ // The item which will be opened with reveal
+      animation: 'fade', // fade, fadeAndPop, none
+      animationspeed: 500, // how fast animtions are
+      closeonbackgroundclick: false, // if you click background modal will close
+      dismissmodalclass: 'close' // the class of a button or element that will close an open modal
+    })
+   
+
+
+
+})

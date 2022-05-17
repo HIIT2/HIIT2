@@ -156,9 +156,9 @@
         </ul>
         <div id="modal-buttons" class=" m-3 text-center">
           
-            <button onclick="pause()" class="btn btn-primary" >Pause Exercise</button>
-            <button onclick="reset()" class="btn btn-primary" >Reset Exercise</button>
-          <button onclick=" dataForShare()" class="btn btn-primary" > I am done</button>
+            <button onclick="pause()" id='pauseExercise'class="btn btn-primary" >Pause Exercise</button>
+            <button class="btn btn-primary" onClick="window.location.reload()" >Reset Exercise</button>
+          <button  id="done" class="btn btn-primary" > I am done</button>
         </div>
         <p class="quote m-3 p-3 text-light text-center" id="mQuoteSelect">
        
@@ -168,6 +168,37 @@
     </div>
 
 
+
+    
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <div id="modal-done" class="modal-box">
+ 
+    <section class="modal-content container text-light d-flex flex-column justify-content-start">
+    
+      <h2 class="m-6">Thank you for using HIIT2</h2>
+      <h3 class="m-6">Total time spent <span id="timeTotal"></span> Seconds</h3>
+      
+      
+      
+      <p id="compled-exercises">Completed Exercises</p>
+      <ul id="exerciseCompleted">
+
+      </ul>
+      
+
+      <button class="btn btn-primary"onclick="location.href='index.html';"> Start new Exercise</button>
 
     
     </section>

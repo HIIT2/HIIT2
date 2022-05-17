@@ -281,3 +281,51 @@ h2,#ibox,#exerciseTips,#mQuoteSelect,#ibox-repeat,#demo{
   h6{
       font-size:30px !important;
   }
+
+
+  /* I am done modal */
+  #modal-done {
+   
+    width:100vw;
+    height:70vh;
+    padding:8px;
+    
+    
+ 
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+ 
+    position:absolute !important;
+   
+    visibility:hidden;
+    z-index:1000;
+}
+#modal-done h2 {
+    font-size: 3rem !important;
+    margin: 2rem;
+}
+#modal-done h3 {
+    font-size: 2rem !important;
+    margin: 2rem;
+}
+#exerciseCompleted{
+    list-style-type: disc;
+    font-size: 1.5rem !important;
+    margin: 1rem;
+    list-style-position: inside;
+   
+    
+}
+#exerciseCompleted li{
+    background-color :rgba(0,0,0,0.6) !important;
+    border-radius: 2rem !important;
+    padding: 1rem 3rem !important;
+    margin: 1rem;
+}
+#compled-exercises{
+    background-color :rgba(0,0,0,0.6) !important;
+    padding: 1rem 3rem !important;
+    font-size: 2rem !important;
+    border-radius: 2rem !important;
+}
