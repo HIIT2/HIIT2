@@ -47,12 +47,66 @@ document.getElementById("roll-button").addEventListener("click", rollDice);
 document.getElementById("roll-button2").addEventListener("click", rollDice2);
 
 
-var exerciseName1="Push Ups"
-var exerciseName2="Squats"
-var exerciseName3="Crunches"
-var exerciseName4="Jumping Jacks"
-var exerciseName5="Lunges"
-var exerciseName6="Planks"
+var exercises = [{"exercise":"1", "value":"Push Ups"}, 
+                  {"exercise":"2", "value":"Squats"},
+                {"exercise":"3", "value":"Crunches"},
+                 {"exercise":"4", "value":"Jumping Jacks"},
+                 {"exercise":"5", "value":"Lunges"},
+                  {"exercise":"6", "value":"Planks"},
+                  {"exercise":"7", "value":"Mountain Climbers"},
+                  {"exercise":"8", "value":"High Knees"},
+                  {"exercise":"9", "value":"Tricep Push Ups"},
+                  {"exercise":"10", "value":"Butt Kicks"}
+                ]
+
+var arrayLength = exercises.length;
+var min1 = 1;
+
+function getRandomExercise1(min1, arrayLength) {
+  min1 = Math.ceil(min1);
+  arrayLength = Math.floor(arrayLength);
+  return Math.floor(Math.random() * (arrayLength - 1 + 1)) + min1;
+                }
+randomNumber1 = getRandomExercise1(1, arrayLength);
+randomNumber2 = getRandomExercise1(1, arrayLength);
+randomNumber3 = getRandomExercise1(1, arrayLength);
+randomNumber4 = getRandomExercise1(1, arrayLength);
+randomNumber5 = getRandomExercise1(1, arrayLength);
+randomNumber6 = getRandomExercise1(1, arrayLength);
+
+
+var matchingExercise = exercises.filter(function (x) {return x.exercise == randomNumber1; });
+console.log(matchingExercise);
+var exerciseName1 = JSON.parse(JSON.stringify(matchingExercise));
+var exerciseName1 = exerciseName1[0].value;
+
+
+var matchingExercise2 = exercises.filter(function (x) {return x.exercise == randomNumber2; });
+console.log(matchingExercise2);
+var exerciseName2 = JSON.parse(JSON.stringify(matchingExercise2));
+var exerciseName2 = exerciseName2[0].value;
+
+var matchingExercise3 = exercises.filter(function (x) {return x.exercise == randomNumber3; });
+console.log(matchingExercise3);
+var exerciseName3 = JSON.parse(JSON.stringify(matchingExercise3));
+var exerciseName3 = exerciseName3[0].value;
+
+
+var matchingExercise4 = exercises.filter(function (x) {return x.exercise == randomNumber4; });
+console.log(matchingExercise4);
+var exerciseName4 = JSON.parse(JSON.stringify(matchingExercise4));
+var exerciseName4 = exerciseName4[0].value;
+
+var matchingExercise5 = exercises.filter(function (x) {return x.exercise == randomNumber5; });
+console.log(matchingExercise5);
+var exerciseName5 = JSON.parse(JSON.stringify(matchingExercise5));
+var exerciseName5 = exerciseName5[0].value;
+
+
+var matchingExercise6 = exercises.filter(function (x) {return x.exercise == randomNumber6; });
+console.log(matchingExercise6);
+var exerciseName6 = JSON.parse(JSON.stringify(matchingExercise6));
+var exerciseName6 = exerciseName6[0].value;
 
 document.getElementById("exerciseName1").innerHTML="<h4>"+exerciseName1+"</h4>"
 document.getElementById("exerciseName2").innerHTML="<h4>"+exerciseName2+"</h4>"
