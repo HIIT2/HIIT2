@@ -144,3 +144,29 @@ function showBtn(btnArr) {
 function hideBtn(btnArr) {
   btnArr.forEach((btn) => (btn.style.display = 'none'));
 }
+
+  //Share workout button start
+  const shareBtn2 = document.getElementById('buttonShare')
+  shareBtn2.addEventListener('click', event => {
+  
+      // Check for Web Share api support
+      if (navigator.share) {
+        // Browser supports native share api
+        navigator.share({
+          text: 'I just got FIIT with HIIT2;! I worked out for ' + toHHMMSS(time) + '! I did' + exerciseName1 + ', ' +  exerciseName2 + ', ' + exerciseName3 + ', ' + exerciseName4 + ', ' + exerciseName5 + ', and ' + exerciseName6 + '!',
+          url: 'https://hiit2.netlify.app/'
+        }).then(() => {
+          console.log('Thanks for sharing!');
+        })
+          .catch((err) => console.error(err));
+      } else {
+        // Fallback
+          navigator.clipboard.writeText(document.getElementById('share-text2').innerText)
+      
+          .then(function() {
+              console.log('text has been copied!')
+          })
+      }
+  
+    });
+  //Share workout button end

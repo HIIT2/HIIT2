@@ -150,7 +150,7 @@
   </div>
     <script src="./js/app.js"></script>
     <script src="js/jquery.reveal.js"></script>
-    <script>
+ <script>
     
             $('#done_btn').click(function (e) { // Button which will activate our modal
                 $('#modal').reveal({ // The item which will be opened with reveal
@@ -161,7 +161,35 @@
                 });
                 return false;
             });
-        
+
+            //Share button1 start
+const shareBtn = document.getElementById('share_btn')
+shareBtn.addEventListener('click', event => {
+
+    // Check for Web Share api support
+    if (navigator.share) {
+      // Browser supports native share api
+      navigator.share({
+        text: 'Check out this amazing workout app HIIT&#xb2;!',
+        url: 'https://hiit2.netlify.app/'
+      }).then(() => {
+        console.log('Thanks for sharing!');
+      })
+        .catch((err) => console.error(err));
+    } else {
+      // Fallback
+        navigator.clipboard.writeText(document.getElementById('share-text1').innerText)
+    
+        .then(function() {
+            console.log('text has been copied!')
+        })
+    }
+
+  });
+//Share button1 end
+       
+
+ 
           </script>
     
   </body>
