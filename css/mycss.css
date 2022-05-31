@@ -372,3 +372,14 @@ h1{
   th{
       text-align: center !important;
   }
+  .sharer {
+    padding: 0.5rem;
+    
+    background:none;
+    border:none;
+    z-index: -11111;
+  }
+  .sharer svg {height:30px;width:30px;}
+  .sharer:hover {
+  color:beige;
+  }
