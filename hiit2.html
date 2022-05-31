@@ -18,6 +18,12 @@
       #roll-button2{
         display:none;
       }
+        #share-text1{
+        display:none
+      }
+
+      #share-text2{
+        display:none
     </style>
   </head>
   <body>
@@ -40,10 +46,10 @@
          <a class="navbar-brand" href="#">HIIT&#xb2;</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+        <a class="nav-link" aria-current="page" href="index.html">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/about.html">About</a>
+        <a class="nav-link" href="about.html">About</a>
       </li>
         
         <li class="nav-item">
@@ -107,7 +113,7 @@
                                            </div>
         <p></p>
     </div>
-       <!--Exercise Duration Counter Begins-->
+       <!--Exercise Duration Counter Begins--!>
        <div class="timer">
        <div id="time">00:00:00</div>
        <div class="btns-container">
@@ -116,35 +122,36 @@
          <button id="done_btn" class="btn btn-warning">DONE</button>
        </div>
        </div>
-       <!--Exercise Duration Counter Ends-->
-      
-       <footer id="footer" class=" navbar fixed-bottom py-4 bg-dark text-white-50 justify-content-center">
-        <div class="row">
-          <div class="col-sm float-right">
-            <p>Copyright &copy; HIIT<sup>2</sup></p>
+       <!--Exercise Duration Counter Ends--!>
+      <!--Footer Start --!>
+      <footer id="footer" class=" navbar fixed-absolute py-4 bg-dark text-white-50 justify-content-center">
+    <div class="row">
+      <div class="col-md-6 text-nowrap text-right r-3"><p class="r-3">Copyright &copy; HIIT<sup>2</sup></p></div>
+      <!--share button-->
+      <div class="col-md-6 text-left"><button id="share_btn" class="btn btn-success"><img
+        src="Images/shareicon.png" style="width: 20px; padding: 2px;">SHARE</button></div>
+            <p id="share-text1" class="ms-5">Check out this awesome workout app! https://hiit2.netlify.app/</p>
           </div>
-
-          <div class="col-sm float-left">
-            <button id="share_btn" class="btn btn-success">SHARE</button>
-          </div>
-        </div>
     </footer>
+<!--Footer end --!>
       
     <div id="modal" class="modal-box">
       <div id="modal-heading">
           Are you done with your workout?
       </div>
 
-      <div id="modal-content">
-          <p>
-          </p>
+<div id="modal-content">
           <div id="modal-buttons"> 
-              <a style="height: 70px;" href="index.html" class="btn btn-sucess" id="button2">Yes, I just got Fit with HIIT!</a>
-              <a style="height: 70px;" href="#" class="btn btn-sucess close" id="button2">Oops! I'm still working out.</a>
-            <br>
-              <a style="height: 70px;" class="btn btn-sucess" id="buttonShare">Share my Workout</a>
+              <a href="#"><button class="btn btn-success" id="buttonYes">Yes, I just got Fit with HIIT!</button></a>
+              <a href="hiit2.html"><button class="btn btn-warning close" id="buttonOops">Oops! I'm still working out.</button></a>
+              <br><br>
+              <p text-align-center>
+              <a><button id="buttonShare" class="btn btn-success"><img
+                src="Images/shareicon.png" style="width: 20px; padding: 2px;">Share my workout</button></a>
+              </p>
               <p id="share-text2" class="ms-5">I just got FIIT with HIIT &#xb2;!</p>
           </div>
+
 
 
 
