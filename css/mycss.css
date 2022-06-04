@@ -33,32 +33,14 @@ body {
 h1 {font-size: 42px;}
 #button {
     line-height: 0.9;
-    text-align: center;
+    
     position: relative;
-    background-color: transparent;
-    border: 1px solid white;
-    padding:20px 40px 
+   
+    
+   
    
 }
- 
-#button:hover {
-    background-image: -webkit-linear-gradient(top, rgb(254, 194, 82), rgb(254, 205, 97));
-    background-image: -moz-linear-gradient(top, rgb(254, 194, 82), rgb(254, 205, 97));
-    background-image: -o-linear-gradient(top, rgb(254, 194, 82), rgb(254, 205, 97));
-    background-image: -ms-linear-gradient(top, rgb(254, 194, 82), rgb(254, 205, 97));
-    background-image: linear-gradient(top, rgb(254, 194, 82), rgb(254, 205, 97));
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#fec252', EndColorStr='#fecd61');
- 
-    -webkit-box-shadow:
-        inset 0px 1px 0px #fed17e,
-              0px 1px 1px rgba(0,0,0,.1);
-    -moz-box-shadow:
-        inset 0px 1px 0px #fed17e,
-              0px 1px 1px rgba(0,0,0,.1);
-    box-shadow:
-        inset 0px 1px 0px #fed17e,
-              0px 1px 1px rgba(0,0,0,.1);
-}
+
 #modal {
     width: 616px;
     height: 400px;
